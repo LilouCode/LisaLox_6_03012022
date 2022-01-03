@@ -1,3 +1,7 @@
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
 #contact_modal {
   display: none;
 }
@@ -76,7 +80,6 @@ form input {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
   margin: 0;
 }
 
@@ -116,6 +119,10 @@ h1 {
 .photographer_section article h2 {
   color: #D3573C;
   font-size: 36px;
+}
+
+.photographer_section article h3 {
+  color: #901C1C;
 }
 
 .photographer_section article img {

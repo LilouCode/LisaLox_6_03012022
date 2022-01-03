@@ -5,8 +5,8 @@
     "main": "index.html",
 
     "scripts": {
-        "sass": "sass --watch ./sass/main.scss:./Front-End-Fisheye/css/style.css --style expanded",
-        "sass-compress" : "sass --watch ./sass/main.scss:./Front-End-Fisheye/css/style.css --style compressed"
+        "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded",
+        "sass-compress" : "sass --watch ./sass/main.scss:./css/style.css --style compressed"
     },
 
     "repository": {
