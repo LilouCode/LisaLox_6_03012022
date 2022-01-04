@@ -5,6 +5,7 @@
 @import "./utils/mixins";
 @import "./utils/variables";
 @import "./components/buttons";
+@import "./components/thumb";
 
 body {
   margin: 0;
@@ -35,23 +36,23 @@ h1 {
   margin-top: 100px;
 }
 
-.photographer_section article {
-  justify-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+// .photographer_section article {
+//   justify-self: center;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
 
-.photographer_section article h2 {
-  color: $color-primary-2;
-  font-size: 36px;
-}
-.photographer_section article h3 {
-  color: $color-primary-1;
-}
+// .photographer_section article h2 {
+//   color: $color-primary-2;
+//   font-size: 36px;
+// }
+// .photographer_section article h3 {
+//   color: $color-primary-1;
+// }
 
-.photographer_section article img {
-  height: 200px;
-  width: 200px;
-}
+// .photographer_section article img {
+//   height: 200px;
+//   width: 200px;
+// }

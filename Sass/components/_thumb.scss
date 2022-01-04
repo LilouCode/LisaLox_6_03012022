@@ -1,0 +1,33 @@
+.thumb{
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &_name{
+        color: $color-primary-2;
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+    &_img{
+        height: 200px;
+        width: 200px;
+        border-radius: 100px;
+        object-fit: cover;
+    }
+    &_city{
+        margin:0;
+        color: $color-primary-1;
+    }
+    &_tagline{
+        font-size: 10px;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    &_price{
+        font-size: 9px;
+        margin: 0;
+        margin-top: 1%;
+        color: #757575;
+    }
+}
