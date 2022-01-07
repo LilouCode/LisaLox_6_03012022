@@ -2,18 +2,19 @@ function photographerFactory(data) {
     const { name, portrait, city, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
-    const user = 'assets/photographers/account.png'
+    // const user = 'assets/photographers/account.png'
     function getUserCardDOM() {
         //creation article
         const article = document.createElement( 'article' );
         article.classList.add("thumb")
+        // article.ariaLabel("Ouvrir la page de" +name);
         // creation image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
         // img.style.backgroundImage("src", picture);
         img.classList.add("thumb_img")
         // creation nom
-        const h2 = document.createElement( 'h2' );
+        const h2 = document.createElement( 'h2');
         h2.textContent = name;
         h2.classList.add("thumb_name");
         //creation ville
