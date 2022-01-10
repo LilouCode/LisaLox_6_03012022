@@ -1,5 +1,5 @@
 @mixin focus {
-    outline: solid 0.15em $color-primary-2;
+    outline: solid 0.15em $color-secondary-1;
     background-color: lighten($color: antiquewhite, $amount: 8%);
     box-shadow: 0.1em 0.1em 0.1em #757575; 
     border-radius: 1%;   

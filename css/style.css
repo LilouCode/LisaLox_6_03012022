@@ -121,7 +121,7 @@ form input {
 }
 
 .thumb:focus-visible {
-  outline: solid 0.15em #D3573C;
+  outline: solid 0.15em #DB8876;
   background-color: #fffdfb;
   box-shadow: 0.1em 0.1em 0.1em #757575;
   border-radius: 1%;
@@ -150,7 +150,7 @@ h1 {
   padding: 1%;
 }
 h1:focus-visible {
-  outline: solid 0.15em #D3573C;
+  outline: solid 0.15em #DB8876;
   background-color: #fffdfb;
   box-shadow: 0.1em 0.1em 0.1em #757575;
   border-radius: 1%;
@@ -162,7 +162,7 @@ h1:focus-visible {
   padding: 1%;
 }
 .logo:focus-visible {
-  outline: solid 0.15em #D3573C;
+  outline: solid 0.15em #DB8876;
   background-color: #fffdfb;
   box-shadow: 0.1em 0.1em 0.1em #757575;
   border-radius: 1%;
