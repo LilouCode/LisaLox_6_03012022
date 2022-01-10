@@ -6,37 +6,8 @@
 @import "./utils/variables";
 @import "./components/buttons";
 @import "./components/thumb";
-
-body {
-  margin: 0;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-}
-
-h1 {
-  color: $color-primary-1;
-  margin-right: 100px;
-}
-
-.logo {
-  height: 50px;
-  margin-left: 100px;
-}
-
-.photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-
+@import "./layout/grids";
+@import "./layout/header";
 // .photographer_section article {
 //   justify-self: center;
 //   display: flex;

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trouvez un photographe avec Fisheye">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye</title>
   </head>
   <body>
-    <header>
-        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" aria-label="Lien vers la page d'acceuil" />
-        <h1>Nos photographes</h1>
+    <header role="banner">
+        <img src="assets/images/logo.png" class="logo" tabindex="0" alt="Logo de Fisheye" aria-label="Lien vers la page d'acceuil" />
+        <h1 tabindex="1">Nos photographes</h1>
     </header>
-    <main id="main">
+    <main id="main" role="main">
         <div class="photographer_section"></div>
     </main>
     <script src="scripts/factories/Photographer.js"></script>

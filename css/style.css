@@ -1,4 +1,8 @@
 body {
+  margin: 0;
+}
+
+body {
   font-family: "DM Sans", sans-serif;
 }
 
@@ -86,6 +90,9 @@ form input {
   align-items: center;
   flex-direction: column;
 }
+.thumb :focus {
+  border: solid 1px #901C1C;
+}
 .thumb_name {
   color: #D3573C;
   font-size: 36px;
@@ -113,8 +120,12 @@ form input {
   color: #757575;
 }
 
-body {
-  margin: 0;
+.photographer_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 70px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 header {
@@ -133,14 +144,6 @@ h1 {
 .logo {
   height: 50px;
   margin-left: 100px;
-}
-
-.photographer_section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
