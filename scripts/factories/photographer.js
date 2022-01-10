@@ -9,7 +9,8 @@ function photographerFactory(data) {
     
         //creation article
         const article = document.createElement( 'article' );
-        article.classList.add("thumb")
+        article.classList.add("thumb");
+        article.tabIndex = "3";
         // article.ariaLabel("Ouvrir la page de" +name);
     
         // creation image

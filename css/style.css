@@ -89,9 +89,9 @@ form input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.thumb :focus {
-  border: solid 1px #901C1C;
+  flex: 20%;
+  margin: 2%;
+  padding: 1%;
 }
 .thumb_name {
   color: #D3573C;
@@ -120,8 +120,16 @@ form input {
   color: #757575;
 }
 
+.thumb:focus-visible {
+  outline: solid 0.15em #D3573C;
+  background-color: #fffdfb;
+  box-shadow: 0.1em 0.1em 0.1em #757575;
+  border-radius: 1%;
+}
+
 .photographer_section {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
   margin-top: 100px;
@@ -139,11 +147,25 @@ header {
 h1 {
   color: #901C1C;
   margin-right: 100px;
+  padding: 1%;
+}
+h1:focus-visible {
+  outline: solid 0.15em #D3573C;
+  background-color: #fffdfb;
+  box-shadow: 0.1em 0.1em 0.1em #757575;
+  border-radius: 1%;
 }
 
 .logo {
   height: 50px;
   margin-left: 100px;
+  padding: 1%;
+}
+.logo:focus-visible {
+  outline: solid 0.15em #D3573C;
+  background-color: #fffdfb;
+  box-shadow: 0.1em 0.1em 0.1em #757575;
+  border-radius: 1%;
 }
 
 /*# sourceMappingURL=style.css.map */

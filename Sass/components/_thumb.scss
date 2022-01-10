@@ -4,9 +4,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    & :focus{
-        border: solid 1px $color-primary-1;
-    }
+    flex: 20%;
+    margin: 2%;
+    padding: 1%;
     &_name{
         color: $color-primary-2;
         font-size: 36px;
@@ -33,4 +33,7 @@
         margin-top: 1%;
         color: #757575;
     }
+}
+.thumb:focus-visible{
+    @include focus;
 }
