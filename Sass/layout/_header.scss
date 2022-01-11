@@ -1,25 +1,16 @@
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+h1 {
+  color: $color-primary-1;
+  margin-right: 100px;
+  padding: 1%;
+  &:focus-visible {
+    @include focus;
   }
-  
-  h1 {
-    color: $color-primary-1;
-    margin-right: 100px;
-    padding: 1%;
-    &:focus-visible{
-      @include focus;
-    }
-  }
-  
-  .logo {
-    height: 50px;
-    margin-left: 100px;
-    padding: 1%;
-    &:focus-visible{
-      @include focus;
-    }
-  }
+}
