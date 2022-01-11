@@ -3,40 +3,38 @@ function photographerFactory(data) {
 
     const picture = `assets/photographers/${portrait}`;
 
-    // const user = 'assets/photographers/account.png'
 
     function getUserCardDOM() {
     
-        //creation article
+    //Article
         const article = document.createElement( 'article' );
         article.classList.add("thumb");
         article.tabIndex = "3";
-        // article.ariaLabel("Ouvrir la page de" +name);
+        article.ariaLabel = "Allez sur la page de" +name
     
-        // creation image
+    // Image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
-        // img.style.backgroundImage("src", picture);
         img.classList.add("thumb_img")
         img.alt = "Photo de profil de " + name
         img.ariaLabel = description
     
-        // creation nom
+    // Noms
         const h2 = document.createElement( 'h2');
         h2.textContent = name;
         h2.classList.add("thumb_name");
     
-        //creation ville
+    // Ville
         const h3 = document.createElement( 'h3' );
         h3.textContent = city;
         h3.classList.add("thumb_city");
     
-        //creation description
+    // Description
         const h4 = document.createElement('h4');
         h4.textContent = tagline;
         h4.classList.add("thumb_tagline");
     
-        // creation prix 
+    // Tarifs 
         const p = document.createElement('p');
         p.textContent= price + "/jour";
         p.classList.add("thumb_price");

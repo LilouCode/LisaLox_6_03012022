@@ -3,7 +3,7 @@ async function getPhotographers() {
   const response= await fetch ("data/photographers.json");
   const data= await response.json();
   const photographers= data;
-  
+ // Attention problème affichage sur Github page.... ajouter un .then dans fetch ??
   return photographers;
 }
 
