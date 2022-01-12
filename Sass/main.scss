@@ -1,30 +1,14 @@
-// importations des fichiers
-// base
 @import "./base/base";
 @import "./base/typography";
-// components
-@import "./components/buttons";
-@import "./components/cta";
-@import "./components/dropdown";
-@import "./components/form-textarea";
-@import "./components/likes";
-@import "./components/logo";
-@import "./components/photograph-header";
-@import "./components/photographer-profile";
-@import "./components/thumb-imgfull";
-@import "./components/thumb-photographer";
-@import "./components/user";
-// layout
-@import "./layout/grids";
-@import "./layout/header";
-// pages
 @import "./pages/photographer";
-// utils
 @import "./utils/maps";
 @import "./utils/mixins";
 @import "./utils/variables";
-
-
+@import "./components/buttons";
+@import "./components/logo";
+@import "./components/thumb";
+@import "./layout/grids";
+@import "./layout/header";
 // .photographer_section article {
 //   justify-self: center;
 //   display: flex;
