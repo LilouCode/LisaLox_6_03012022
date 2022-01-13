@@ -89,10 +89,10 @@ form input {
   padding: 1%;
 }
 .logo:focus-visible {
-  outline: solid 0.15em #DB8876;
-  background-color: #fffdfb;
-  box-shadow: 0.1em 0.1em 0.1em #757575;
-  border-radius: 1%;
+  outline: solid 0.125em #DB8876;
+  background-color: white;
+  box-shadow: 0.2em 0.1em 0.3em #525252;
+  border-radius: 2%;
 }
 
 .thumb {
@@ -133,10 +133,10 @@ form input {
 }
 
 .thumb:focus-visible {
-  outline: solid 0.15em #DB8876;
-  background-color: #fffdfb;
-  box-shadow: 0.1em 0.1em 0.1em #757575;
-  border-radius: 1%;
+  outline: solid 0.125em #DB8876;
+  background-color: white;
+  box-shadow: 0.2em 0.1em 0.3em #525252;
+  border-radius: 2%;
 }
 
 .photographer_section {
@@ -162,10 +162,10 @@ h1 {
   padding: 1%;
 }
 h1:focus-visible {
-  outline: solid 0.15em #DB8876;
-  background-color: #fffdfb;
-  box-shadow: 0.1em 0.1em 0.1em #757575;
-  border-radius: 1%;
+  outline: solid 0.125em #DB8876;
+  background-color: white;
+  box-shadow: 0.2em 0.1em 0.3em #525252;
+  border-radius: 2%;
 }
 
 /*# sourceMappingURL=style.css.map */

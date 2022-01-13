@@ -47,3 +47,13 @@ function photographerFactory(data) {
     }
     return { name, picture, city, tagline, price, description, getUserCardDOM }
 }
+
+function urlFactory(data){
+    const {id} = data;
+    function getUrlPhotographer() {
+        const urlPhotographer = new URL("./photographer/");
+        urlPhotographer.searchParams.append("id", id);
+    }
+
+    return {id, getUrlPhotographer}
+}
