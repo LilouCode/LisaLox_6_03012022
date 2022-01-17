@@ -3,17 +3,19 @@
     "version": "1.0.2",
     "description": "",
     "main": "index.html",
-
     "scripts": {
         "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded",
-        "sass-compress" : "sass --watch ./sass/main.scss:./css/style.css --style compressed"
+        "sass-compress": "sass --watch ./sass/main.scss:./css/style.css --style compressed"
     },
-
     "repository": {
         "type": "git",
         "url": "https://github.com/LilouCode/LisaLox_6_03012022"
     },
     "author": "",
     "license": "UNLICENSED",
-    "private": true
+    "private": true,
+    "devDependencies": {
+        "eslint": "^8.6.0",
+        "prettier": "^2.5.1"
+    }
 }

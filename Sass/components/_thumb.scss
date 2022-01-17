@@ -7,7 +7,9 @@
     flex: 20%;
     margin: 2%;
     padding: 1%;
-    
+    &_link{
+        text-decoration: none;
+    }
     &_name{
         color: $color-primary-2;
         font-size: 36px;

@@ -105,6 +105,9 @@ form input {
   margin: 2%;
   padding: 1%;
 }
+.thumb_link {
+  text-decoration: none;
+}
 .thumb_name {
   color: #D3573C;
   font-size: 36px;

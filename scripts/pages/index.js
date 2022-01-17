@@ -3,12 +3,14 @@ async function getPhotographers() {
   const response= await fetch ("data/photographers.json");
   const data= await response.json();
   const photographers= data;
- // Attention problème affichage sur Github page.... ajouter un .then dans fetch ??
   return photographers;
 }
 
+
+
 //Affichage data photographes
 async function displayData(photographers) {
+  
   const photographersSection = document.querySelector(".photographer_section");
 
   photographers.forEach((photographer) => {
@@ -18,11 +20,15 @@ async function displayData(photographers) {
   });
 }
 
+
+
 //Récupération data puis affichage
 async function init() {
-  // Récupère les datas des photographes
-  const { photographers } = await getPhotographers();
+  
+  const { photographers } = await getPhotographers(); // Récupère les datas des photographes
+  
   displayData(photographers);
+
 }
 
 // go
