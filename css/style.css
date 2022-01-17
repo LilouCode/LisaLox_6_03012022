@@ -106,7 +106,11 @@ form input {
   padding: 1%;
 }
 .thumb_link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-decoration: none;
+  align-items: center;
 }
 .thumb_name {
   color: #D3573C;

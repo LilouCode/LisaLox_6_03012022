@@ -8,7 +8,11 @@
     margin: 2%;
     padding: 1%;
     &_link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         text-decoration: none;
+        align-items: center;   
     }
     &_name{
         color: $color-primary-2;
