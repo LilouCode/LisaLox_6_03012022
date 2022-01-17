@@ -1,45 +1,78 @@
 //Mettre le code JavaScript lié à la page photographer.html
-
-
-(async function () {
-    //Recupération photographe ID
-    function getPhotographerId(){
-        const photographerUrl = new URL(document.location).searchParams.get('id');
-        console.log(photographerUrl);
-        return photographerUrl;
-    }
-    const photographerId = getPhotographerId()
-    const photographerData = await getPhotographerData(photographerId);
-
-})()
-
-//Récupération data photographes dans le json
-async function getPhotographerData(photographerId){
+async function getPhotographers() {
+    const response= await fetch ("data/photographers.json");
+    const data= await response.json();
+    const photographers= data;
+    return photographers;
+  }
+  
+  
+  
+  //Affichage data photographes
+  async function displayData(photographers) {
     
-    return fetch("data/photographers.json")
+    const photographersSection = document.querySelector(".photographer_section");
+  
+    photographers.forEach((photographer) => {
+      const photographerModel = photographerFactory(photographer);
+      const userCardDOM = photographerModel.getUserCardDOM();
+      photographersSection.appendChild(userCardDOM);
+    });
+  }
+  
+  
+  
+  //Récupération data puis affichage
+  async function init() {
     
-    .then(function(response){
-      return response.json()
-    })
+    const { photographers } = await getPhotographers(); // Récupère les datas des photographes
     
-    .then(function(objet){
-        objet.photographers.forEach((photographers) => {
-            // console.log(media.photographerId)
-            if (photographerId == photographers.id){
-                const data = {
-                    name: photographers.name,
-                    city: photographers.city,
-                    tagline: photographers.tagline
-                }
-                console.log(data)
-            }
-        })
-    })
+    displayData(photographers);
+  
+  }
+  
+  // go
+  init();
+
+// (async function () {
+//     //Recupération photographe ID
+//     function getPhotographerId(){
+//         const photographerUrl = new URL(document.location).searchParams.get('id');
+//         console.log(photographerUrl);
+//         return photographerUrl;
+//     }
+//     const photographerId = getPhotographerId()
+//     const photographerData = await getPhotographerData(photographerId);
+
+// })()
+
+// //Récupération data photographes dans le json
+// async function getPhotographerData(photographerId){
     
-    .catch(function(error){
-      alert.error
-    })
-}
+//     return fetch("data/photographers.json")
+    
+//     .then(function(response){
+//       return response.json()
+//     })
+    
+//     .then(function(objet){
+//         objet.photographers.forEach((photographers) => {
+//             // console.log(media.photographerId)
+//             if (photographerId == photographers.id){
+//                 const data = {
+//                     name: photographers.name,
+//                     city: photographers.city,
+//                     tagline: photographers.tagline
+//                 }
+//                 console.log(data)
+//             }
+//         })
+//     })
+    
+//     .catch(function(error){
+//       alert.error
+//     })
+// }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
