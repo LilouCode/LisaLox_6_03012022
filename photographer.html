@@ -1,40 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/Fisheye-favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="./assets/Fisheye-favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="./scripts/utils/contactForm.js" defer></script>
+    <script src="./scripts/pages/photographer.js" defer></script>
+    <script src="./scripts/factories/photographer-fact.js" defer></script>
   </head>
   <body>
 
     <header role="banner">
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="./assets/images/logo.png" class="logo" />
     </header>
     
     <main id="main" role="main">
-      <div class="photograph-header">
+      <section class="photograph-header">
+        <div class="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class= user></div>
       </div>
     </main>
     
     <div id="contact_modal">
 			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
+				
+        <header>
+          <h2 id="modal_title">Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
+				
+        <form class="contact_form" name="contact_photographer" id="form" action="photographer.html" method="get"> 
+					
+          <div class="formData">
+						<label for="firstName">Prénom</label>
+						<input type="text" id="first-name" name="first"/>
+            <span id="first-name_error" class="input-error" aria-hidden="true"></span>
+          </div>
+
+          <div class="formData">
+            <label for="lastName">Nom</label>
+            <input type="text" id="last-name" name="last">
+            <span id="last-name_error" class="input-error" aria-hidden="true"></span>
+          </div>
+          
+          <div class="formData">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <span id="email_error" class="input-error" aria-hidden="true"></span>
+          </div>
+
+          <div class="formData">
+            <label for="message">Votre message</label>
+            <input type="text" name="message" id="message">
+            <span id="message" class="input-error" aria-hidden="true"></span>
 					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
+          <button class="contact_button" type="submit">Envoyer</button>
+				</form>            
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
+    <footer class="footer_photographer">
+
+    </footer>
   </body>
 </html>
