@@ -10,7 +10,6 @@ async function getPhotographers() {
 
 //Affichage data photographes
 async function displayData(photographers) {
-  import photographerFactory from 'scripts/factories/photographer-fact.js';
   const photographersSection = document.querySelector(".photographer_section");
 
   photographers.forEach((photographer) => {

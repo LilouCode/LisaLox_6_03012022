@@ -39,6 +39,7 @@
   function getPhotographerId(){
       const photographerUrl = new URL(document.location).searchParams.get('id');
       console.log(photographerUrl);
+      document.createElement('h2');
       return photographerUrl;
   }
   const photographerId = getPhotographerId()
@@ -48,7 +49,7 @@
 
 //Récupération data photographes dans le json
 async function getPhotographerData(photographerId){
-  let photographerProfile = document.getElementById("photographer-profile").textContent("test");
+  let photographerProfile = document.getElementById("photographer-profile");
   let h2 = document.createElement('h2');
   return fetch("data/photographers.json")
   
