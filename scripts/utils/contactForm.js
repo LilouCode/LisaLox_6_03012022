@@ -1,12 +1,17 @@
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
+  const modal = document.getElementById('contact_modal');
+	const mainWrapper = document.getElementById('#main');
+  modal.style.display = 'flex';
+  mainWrapper.attr('aria-hidden', 'true');
+  modal.attr('aria-hidden', 'false');
 }
 
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+  const modal = document.getElementById('contact_modal');
+  modal.style.display = 'none';
 }
+
+
 /////////////////////
 //Liaison des labels
 const firstName = document.getElementById("first-name");
@@ -14,7 +19,14 @@ const lastName = document.getElementById("last-name");
 const email = document.getElementById("email");
 const message= document.getElementById("message");
 const form = document.getElementById("form");
- 
+const modal = document.getElementById('contact_modal');
+
+window.addEventListener("keydown", function (event) {
+  if(event.key === "Escape" ){
+    closeModal();
+  }
+})
+
 //ecoutes
 firstName.addEventListener("change", () => {
     validFirstName(this);  

@@ -1,5 +1,6 @@
 @import "./base/base";
 @import "./base/typography";
+@import "./base/animations";
 @import "./pages/photographer";
 @import "./utils/maps";
 @import "./utils/mixins";
@@ -10,23 +11,4 @@
 @import "./layout/grids";
 @import "./layout/header";
 @import "./layout/form";
-// .photographer_section article {
-//   justify-self: center;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-// }
-
-// .photographer_section article h2 {
-//   color: $color-primary-2;
-//   font-size: 36px;
-// }
-// .photographer_section article h3 {
-//   color: $color-primary-1;
-// }
-
-// .photographer_section article img {
-//   height: 200px;
-//   width: 200px;
-// }
+@import "./layout/lightbox";
