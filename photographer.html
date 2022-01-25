@@ -16,7 +16,7 @@
   <body>
 
     <header role="banner">
-      <img src="./assets/images/logo.png" class="logo" />
+      <img src="./assets/images/logo.png" class="logo" alt="Logo Fisheye" role="button" aria-roledescription="Retour sur la page d'acceuil de Fisheye"/>
     </header>
     
     <main id="main" role="main">
@@ -33,37 +33,37 @@
     </main>
     
     <section id="contact_modal" aria-hidden="true" class="modal" role="dialog">
-			<div class="modal" tabindex="0" role="dialog" aria-describedby="Contactez-moi">
+			<div class="modal" tabindex="0" role="dialog">
 				
         <header>
           <h2 id="modal_title" tabindex="0">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" aria-roledescription="fermer" role="button"/>
+          <img alt="bouton fermer" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" aria-roledescription="fermer" role="button"/>
         </header>
 				
         <form class="contact_form" name="contact_photographer" id="form" action="photographer.html" method="get"> 
-					<div role="group" aria-labelledby="vos coordonnées">
+					<div role="group">
             <div class="formData">
               <label for="firstName" tabindex="0" >Prénom</label>
-              <input type="text" id="first-name" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
+              <input required minlength="2" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
               <span id="first-name_error" class="input-error" aria-hidden="true"></span>
             </div>
   
             <div class="formData">
               <label for="lastName" tabindex="0">Nom</label>
-              <input type="text" id="last-name" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
+              <input required minlength="2" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
               <span id="last-name_error" class="input-error" aria-hidden="true"></span>
             </div>
             
-            <div class="formData">
+            <div class="formData" aria-hidden="true">
               <label for="email" tabindex="0">Email</label>
-              <input type="email" id="email" aria-placeholder="Veuillez renseignez votre email ici" name="email">
+              <input required type="email" id="email" aria-placeholder="Veuillez renseignez votre email ici" name="email">
               <span id="email_error" class="input-error" aria-hidden="true"></span>
             </div>
           </div>
 
-          <div class="formData" aria-labelledby="Votre message">
+          <div class="formData" aria-hidden="true">
             <label for="message" tabindex="0">Votre message</label>
-            <input type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message">
+            <input required minlength="5" type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message">
             <span id="message" class="input-error" aria-hidden="true"></span>
 					</div>
           <button class="contact_button" type="submit">Envoyer</button>

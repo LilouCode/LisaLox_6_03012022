@@ -14,8 +14,8 @@ function closeModal() {
 
 /////////////////////
 //Liaison des labels
-const firstName = document.getElementById("first-name");
-const lastName = document.getElementById("last-name");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const message= document.getElementById("message");
 const form = document.getElementById("form");
@@ -55,7 +55,7 @@ form.addEventListener("submit", (e) => {
       msg = "Vous devez saisir un minimum de 2 caractères pour ce champs";
     }
     // ******* Doit contenir uniquement des caractères valides
-    else if (!firstNameRegExp.test(firstName.value)) {
+    else if (!firstNameRegExp.test(firstName)) {
       msg = "Veuillez renseigner ce champs uniquement avec des caractères autorisés";
     }
     //******* Prénom valide
