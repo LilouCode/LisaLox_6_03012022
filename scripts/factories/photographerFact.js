@@ -41,7 +41,7 @@ function photographerFactory(data) {
     
     // Tarifs 
         const p = document.createElement('p');
-        p.textContent= price + "/jour";
+        p.textContent= price + "€/jour";
         p.classList.add("thumb_price");
         
     //organisation des éléments    
