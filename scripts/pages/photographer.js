@@ -43,7 +43,7 @@ async function getPhotographerData(photographerId){
   })
 }
 
-// 
+
 // -------------------------------------------------------
 // (async function () {
 //   //Recupération photographe ID
@@ -85,9 +85,13 @@ async function getPhotographerData(photographerId){
 //         console.log(data);
 //         console.log(data.name);
 //         h1.textContent= `${data.name}`;
+//         h1.classList.add('thumb_name');
 //         h3.textContent=`${data.city}`;
+//         h3.classList.add('thumb_city');
 //         h4.textContent=`${data.tagline}`;
+//         h4.classList.add('thumb_tagline');
 //         img.setAttribute ('src', ('assets/photographers/'+`${data.picture}`));
+//         img.classList.add('thumb_img');
 //         photographerProfile.appendChild(h1);
 //         photographerProfile.appendChild(div);
 //         photographerProfile.appendChild(img);

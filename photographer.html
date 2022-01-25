@@ -16,7 +16,9 @@
   <body>
 
     <header role="banner">
-      <img src="./assets/images/logo.png" class="logo" alt="Logo Fisheye" role="button" aria-roledescription="Retour sur la page d'acceuil de Fisheye"/>
+      <a href="index.html" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="-1">
+        <img src="./assets/images/logo.png" class="logo" alt="Fisheye Home page" tabindex="0"/>
+      </a>
     </header>
     
     <main id="main" role="main">
@@ -40,17 +42,17 @@
           <img alt="bouton fermer" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" aria-roledescription="fermer" role="button"/>
         </header>
 				
-        <form class="contact_form" name="contact_photographer" id="form" action="photographer.html" method="get"> 
+        <form class="contact_form modal_form" name="contact_photographer" id="form" action="photographer.html" method="get"> 
 					<div role="group">
             <div class="formData">
-              <label for="firstName" tabindex="0" >Prénom</label>
-              <input required minlength="2" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
+              <label for="firstName" class="modal_form_label" tabindex="0" >Prénom</label>
+              <input required minlength="2" class="modal_form_input" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
               <span id="first-name_error" class="input-error" aria-hidden="true"></span>
             </div>
   
             <div class="formData">
-              <label for="lastName" tabindex="0">Nom</label>
-              <input required minlength="2" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
+              <label for="lastName" class="modal_form_label" tabindex="0">Nom</label>
+              <input required minlength="2" class="modal_form_input" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
               <span id="last-name_error" class="input-error" aria-hidden="true"></span>
             </div>
             

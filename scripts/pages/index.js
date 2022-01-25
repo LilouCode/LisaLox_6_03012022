@@ -3,7 +3,9 @@ async function getPhotographers() {
   const response= await fetch ("data/photographers.json");
   const data= await response.json();
   const photographers= data;
+  console.log("hello"+photographers);
   return photographers;
+  
 }
 
 
@@ -11,7 +13,7 @@ async function getPhotographers() {
 //Affichage data photographes
 async function displayData(photographers) {
   const photographersSection = document.querySelector(".photographer_section");
-
+  
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
