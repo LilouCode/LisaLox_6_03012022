@@ -1,9 +1,9 @@
 function displayModal() {
   const modal = document.getElementById('contact_modal');
-	const mainWrapper = document.getElementById('#main');
+	const mainWrapper = document.getElementById('main');
   modal.style.display = 'flex';
-  mainWrapper.attr('aria-hidden', 'true');
-  modal.attr('aria-hidden', 'false');
+  mainWrapper.setAttribute('aria-hidden', 'true');
+  modal.setAttribute('aria-hidden','false');
 }
 
 function closeModal() {

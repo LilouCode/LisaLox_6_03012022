@@ -1,8 +1,14 @@
- .logo {
+#logo{
+  &:focus-visible{
+  @include focus;
+  }
+}
+
+.logo {
     height: 50px;
     margin-left: 100px;
     padding: 1%;
-    &:focus-visible{
-      @include focus;
-    }
+    // &:focus-visible{
+    //   @include focus;
+    // }
   }

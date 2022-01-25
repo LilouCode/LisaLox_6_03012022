@@ -9,13 +9,14 @@ function photographerFactory(data) {
     //Article
         const article = document.createElement( 'article' );
         article.classList.add("thumb");
-        article.tabIndex = "3";
         article.ariaLabel = "Allez sur la page de " +name
+        article.tabIndex= 0;
     
     //Lien
         const a = document.createElement('a');
         a.href += '/photographer.html?id=' + id;
         a.classList.add("thumb_link")
+        a.tabIndex= -1;
     // Image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
@@ -60,7 +61,6 @@ function photographerFactory(data) {
         //Profile
             const profile = document.createElement( 'profile' );
             article.classList.add("profile");
-            article.tabIndex = "3";
             article.ariaLabel = "Profile de " +name
         
         // Noms
