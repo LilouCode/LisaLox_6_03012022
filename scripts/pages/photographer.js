@@ -1,51 +1,53 @@
-(async function () {
-  //Recupération photographe ID
-  function getPhotographerId(){
-      const photographerUrl = new URL(document.location).searchParams.get('id');
-      console.log(photographerUrl);
-      document.createElement('h1');
-      return photographerUrl;
-  }
-  const photographerId = getPhotographerId()
-  const photographerData = await getPhotographerData(photographerId);
+// code qui marche pas
+// (async function () {
+//   //Recupération photographe ID
+//   function getPhotographerId(){
+//       const photographerUrl = new URL(document.location).searchParams.get('id');
+//       console.log(photographerUrl);
+//       document.createElement('h1');
+//       return photographerUrl;
+//   }
+//   const photographerId = getPhotographerId()
+//   const photographerData = await getPhotographerData(photographerId);
 
-})()
+// })()
 
-//Récupération data photographes dans le json
-async function getPhotographerData(photographerId){
-  let photographerProfile = document.getElementById("photographer-profile");
-  return fetch("data/photographers.json")
+// //Récupération data photographes dans le json
+// async function getPhotographerData(photographerId){
+//   let photographerProfile = document.getElementById("photographer-profile");
+//   return fetch("data/photographers.json")
   
-  .then(function(response){
-    return response.json()
-  })
+//   .then(function(response){
+//     return response.json()
+//   })
   
-  .then(function(objet){
-    objet.photographers.forEach((photographers) => {
-      if (photographerId == photographers.id){
-        const data =  {
-          photographerData: photographers
-        };
-        console.log(data);
-      }
-      // return (photographerProfile)
-      return data
-    })
-  })
+//   .then(function(objet){
+//     objet.photographers.forEach((photographers) => {
+//       if (photographerId == photographers.id){
+//         const data =  {
+//           photographerData: photographers
+//         };
+//         console.log(data);
+//       }
+//       // return (photographerProfile)
+//       return data
+//     })
+//   })
   
-  .then(function(data){
-    const photographerModel = photographerFactory(data);
-    const userProfilDOM = photographerModel.getUserHeaderDOM();
-    photographerProfile.appendChild(userProfilDOM);
-  })
-  .catch(function(error){
-    alert.error
-  })
-}
+//   .then(function(data){
+//     const photographerModel = photographerFactory(data);
+//     const userProfilDOM = photographerModel.getUserHeaderDOM();
+//     photographerProfile.appendChild(userProfilDOM);
+//   })
+//   .catch(function(error){
+//     alert.error
+//   })
+// }
 
 
 // -------------------------------------------------------
-// (async function () {
+// le bon et dernier code qui marche
+//    (async function () {
 //   //Recupération photographe ID
 //   function getPhotographerId(){
 //       const photographerUrl = new URL(document.location).searchParams.get('id');
@@ -106,3 +108,56 @@ async function getPhotographerData(photographerId){
 //     alert.error
 //   })
 // }
+
+/////////////////////////////
+// un nouveaux test avec des classes
+(async function () {
+  //Recupération photographe ID
+  function getPhotographerId(){
+      const photographerUrl = new URL(document.location).searchParams.get('id');
+      console.log(photographerUrl);
+      document.createElement('h1');
+      return photographerUrl;
+  }
+  const photographerId = getPhotographerId()
+  const photographerData = await getPhotographerData(photographerId);
+
+})()
+
+//Récupération data photographes dans le json
+async function getPhotographerData(photographerId){
+  // let photographerProfile = document.getElementById("photographer-profile");
+  // let h1 = document.createElement('h1');
+  // let div = document.createElement('div');
+  // let h3 = document.createElement('h3');
+  // let h4 = document.createElement('h4');
+  // let img = document.createElement('img');
+  return fetch("data/photographers.json")
+  
+  .then(function(response){
+    return response.json()
+  })
+  
+  .then(function(objet){
+    objet.photographers.forEach((photographers) => {
+      if (photographerId == photographers.id){
+        let $wrapperProfil = document.getElementById("photographer-profile");
+        const data = new infosUser(photographers)
+        const template = new PhotographerProfileCard(data)
+        $wrapperProfil.appendChild(
+          template.createPhotographerProfileCard(photographers)
+        )
+        // const data = new infosUser(photographers)
+        // const template = new PhotographerProfileCard(data)
+        console.log(template)
+      }
+
+      // console.log(test); //ok 1 photographe
+      // return (photographersg)
+    })
+  })
+  
+  .catch(function(error){
+    alert.error
+  })
+}
