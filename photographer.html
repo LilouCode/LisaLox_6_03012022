@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <!-- templates -->
     <script src="./scripts/templates/PhotographerProfil.js" defer></script>
+    <script src="./scripts/templates/PhotographerProfileImage.js"></script>
     <!-- models -->
     <script src="./scripts/models/infosUser.js" defer></script>
     <!-- factory -->
@@ -33,10 +34,12 @@
       <section id="photograph-header">
         <div id="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()" data-keyboard="true">Contactez-moi</button>
+        <div id="photographer_image"></div>
       </section>
 
-      <section class="">
-
+      <section id="media-grid">
+        <div id="filter"></div>
+        <div id="grid"></div>
       </section>
 
     </main>

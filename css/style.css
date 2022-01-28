@@ -65,6 +65,36 @@ body {
   padding: 1%;
 }
 
+#photograph-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FAFAFA;
+  margin: 4% 6%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.profile_header {
+  font-size: 64px;
+  color: #D3573C;
+  padding: 0;
+}
+.profile_subtitle {
+  font-size: 24px;
+  color: #901C1C;
+}
+
+.imageUser {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
 .thumb {
   justify-self: center;
   display: flex;

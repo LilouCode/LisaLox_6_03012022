@@ -5,7 +5,7 @@ class infosUser{
         this._country = data.country
         this._tagline = data.tagline 
         this._price = data.price 
-        this._picture = data.portrait
+        this._portrait = data.portrait
         this._description = data.description
         this._id = data.id 
     }
@@ -24,6 +24,10 @@ class infosUser{
 
     get price(){
         return `${this._price}€/jour`
+    }
+
+    get portrait(){
+        return `assets/photographers/${this._portrait}`
     }
 
     get description(){

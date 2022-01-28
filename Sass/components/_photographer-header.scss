@@ -1,0 +1,26 @@
+#photograph-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $color-secondary-3;
+    margin:4% 6%;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    &_header{
+        font-size: 64px;
+        color: $color-primary-2;
+        padding: 0;
+    }
+    &_subtitle{
+        font-size: 24px;
+        color: $color-primary-1;
+    }
+}
+
+.imageUser{
+    @include imageUser;
+}

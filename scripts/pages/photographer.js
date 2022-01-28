@@ -141,19 +141,18 @@ async function getPhotographerData(photographerId){
   .then(function(objet){
     objet.photographers.forEach((photographers) => {
       if (photographerId == photographers.id){
+        //creation du profil
         let $wrapperProfil = document.getElementById("photographer-profile");
-        const data = new infosUser(photographers)
-        const template = new PhotographerProfileCard(data)
-        $wrapperProfil.appendChild(
-          template.createPhotographerProfileCard(photographers)
-        )
-        // const data = new infosUser(photographers)
-        // const template = new PhotographerProfileCard(data)
-        console.log(template)
+        const data = new infosUser(photographers);
+        const template = new PhotographerProfileCard(data);
+        $wrapperProfil.appendChild(template.createPhotographerProfileCard(photographers));
+        console.log(template);
+        // image user
+        let $wrapperImg = document.getElementById("photographer_image");
+        const templateImage = new PhotographerProfileImage(data);
+        $wrapperImg.appendChild(templateImage.createPhotographerProfileImage(photographers));
+        console.log(templateImage);
       }
-
-      // console.log(test); //ok 1 photographe
-      // return (photographersg)
     })
   })
   
