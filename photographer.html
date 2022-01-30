@@ -9,9 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <!-- templates -->
     <script src="./scripts/templates/PhotographerProfil.js" defer></script>
-    <script src="./scripts/templates/PhotographerProfileImage.js"></script>
+    <script src="./scripts/templates/PhotographerProfileImage.js" defer></script>
+    <script src="./scripts/templates/ThumbMedia.js" defer></script>
     <!-- models -->
     <script src="./scripts/models/infosUser.js" defer></script>
+    <script src="./scripts/models/infosMediaImg.js" defer></script>
+    <script src="./scripts/models/infosMediaVideo.js" defer></script>
     <!-- factory -->
     <script src="./scripts/factories/photographerFact.js" defer></script>
     <!-- utils -->
@@ -30,20 +33,20 @@
     </header>
     
     <main id="main" role="main">
-      
+     <!-- header profile photographe -->
       <section id="photograph-header">
         <div id="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
       </section>
-
+      <!-- grid media -->
       <section id="media-grid">
         <div id="filter"></div>
         <div id="grid"></div>
       </section>
 
     </main>
-    
+    <!-- modal formulaire de contact -->
     <section id="contact_modal" aria-hidden="true" class="modal" role="dialog">
 			<div class="modal" tabindex="0" role="dialog">
 				
@@ -82,10 +85,11 @@
 				</form>            
 			</div>
     </section>
-    
-    <section id="ligthbox" aria-hidden="true"  role="dialog">
+    <!-- lightbox -->
+    <section id="lightbox" aria-hidden="true"  role="dialog">
       
     </section>
+    <!-- footer avec prix et likes totals -->
     <footer class="footer_photographer">
 
     </footer>

@@ -121,17 +121,12 @@
   }
   const photographerId = getPhotographerId()
   const photographerData = await getPhotographerData(photographerId);
+  const mediaData = await getMediaData(photographerId);
 
 })()
 
 //Récupération data photographes dans le json
 async function getPhotographerData(photographerId){
-  // let photographerProfile = document.getElementById("photographer-profile");
-  // let h1 = document.createElement('h1');
-  // let div = document.createElement('div');
-  // let h3 = document.createElement('h3');
-  // let h4 = document.createElement('h4');
-  // let img = document.createElement('img');
   return fetch("data/photographers.json")
   
   .then(function(response){
@@ -152,6 +147,29 @@ async function getPhotographerData(photographerId){
         const templateImage = new PhotographerProfileImage(data);
         $wrapperImg.appendChild(templateImage.createPhotographerProfileImage(photographers));
         console.log(templateImage);
+      }
+    })
+  })
+  
+  .catch(function(error){
+    alert.error
+  })
+}
+///////////////////////////////////////////////////
+//Récupération data medias dans le json
+async function getMediaData(photographerId){
+  return fetch("data/photographers.json")
+  
+  .then(function(response){
+    return response.json()
+  })
+  
+  .then(function(objet){
+    objet.media.forEach((media) => {
+      if (photographerId == media.photographerId){
+        //creation du profil
+        console.log(media) //ça marche !
+        
       }
     })
   })
