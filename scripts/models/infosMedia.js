@@ -1,9 +1,10 @@
-class infosMediaImage{
+class infosMedia{
     constructor(data){
         this._id = data.id
         this._photographerId = data.photographerId
         this._title = data.title 
-        this._media = data.image 
+        this._image = data.image
+        this._video = data.video
         this._likes = data.likes 
         this._date = data.date  
         this._price = data.price 
@@ -22,7 +23,11 @@ class infosMediaImage{
     }
 
     get image(){
-        return `assets/medias/${this._id}/${this._media}`
+        return `assets/medias/${this._id}/${this._image}`
+    }
+
+    get video(){
+        return `assets/medias/${this._id}/${this._video}`
     }
 
     get likes () {
@@ -35,6 +40,6 @@ class infosMediaImage{
 
     get price () {
         return `${this._price}€`
-    }//pas utile ?
+    }
 
 }

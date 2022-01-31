@@ -1,14 +1,25 @@
+class ThumbVideo{
+    constructor(infosMedia){
+        this._infosMedia = infosMedia;
+    }
+
+    createThumbVideo(){
+        const $wrapperThumbMedia = document.createElement('div')
+        const thumbVideo = `<video src="${this._infosMedia.video}"></video>`
+        $wrapperThumbMedia.innerHTML = thumbVideo
+        return $wrapperThumbMedia
+    }
+}
+
 class ThumbImg{
     constructor(infosMedia){
         this._infosMedia = infosMedia;
     }
 
-    createThumbMedia(){
+    createThumbImg(){
         const $wrapperThumbMedia = document.createElement('div')
-        const thumbImage = new mediaFactory (models, data.image)
-        // const thumbMedia = new 
-        //rajouter alt
-        $wrapperThumbMedia.innerHTML = thumbMedia
+        const thumbImg = `<img src="${this._infosMedia.image}"></img>`
+        $wrapperThumbMedia.innerHTML = thumbImg
         return $wrapperThumbMedia
     }
 }

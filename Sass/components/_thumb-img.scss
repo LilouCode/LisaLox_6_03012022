@@ -1,0 +1,26 @@
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4%;
+    justify-content: space-between;
+}
+
+.thumbImg{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: space-between;
+    &_details{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: $color-primary-1;
+    }
+    &_likes{
+        display: flex;
+        &_button{
+            width: 15px;
+            color: $color-primary-1;
+        }
+    }
+}

@@ -1,10 +1,14 @@
 class mediaFactory{
     constructor(data){
-        if(media._media == data.image){
-            return new infosMediaImage(data);
-        } else if (media._media == data.video){
-            return new infosMediaVideo(data);
-        } else{
+        if(!(data.video =null)){
+            return new ThumbVideo(data);
+        } 
+        
+        if (!(data.image = null)){
+            return new ThumbImg(data);
+        } 
+        
+        else{
             throw 'Fichier non pris en charge'
         }
     }
