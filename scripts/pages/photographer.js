@@ -1,4 +1,5 @@
-// un nouveaux test avec des classes
+////////////////////////// Profil photographe //////////////////////////
+
 (async function () {
   //Recupération photographe ID
   function getPhotographerId(){
@@ -35,6 +36,9 @@ async function getPhotographerData(photographerId){
         const templateImage = new PhotographerProfileImage(data);
         $wrapperImg.appendChild(templateImage.createPhotographerProfileImage(photographers));
         console.log(templateImage);
+        //CTA
+        let ctaPrice = document.getElementById('CTA_price');
+        ctaPrice.innerHTML= `${data.price}`;
       }
     })
   })
@@ -43,7 +47,9 @@ async function getPhotographerData(photographerId){
     alert.error
   })
 }
-///////////////////////////////////////////////////
+
+////////////////////////// Grid Media //////////////////////////
+
 //Récupération data medias dans le json
 async function getMediaData(photographerId){
   return fetch("data/photographers.json")

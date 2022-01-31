@@ -19,6 +19,7 @@
     <script src="./scripts/factories/photographerFact.js" defer></script>
     <!-- utils -->
     <script src="./scripts/utils/lightbox.js" defer></script>
+    <script src="./scripts/utils/likes.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
     <!-- page -->
     <script src="./scripts/pages/photographer.js" defer></script>
@@ -33,12 +34,23 @@
     </header>
     
     <main id="main" role="main">
-     <!-- header profile photographe -->
+     
+     
+      <!-- header profile photographe -->
       <section id="photograph-header">
         <div id="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
+        <div id="CTA">
+          <span>
+            <p id= "CTA_total-like"></p>
+             <img id="CTA_heart" src="assets/icons/like_heart--black.svg" aria-hidden="true">
+            </span>
+            <p id="CTA_price"></p>
+        </div>
       </section>
+
+
       <!-- grid media -->
       <section id="media-grid">
         <div id="filter"></div>

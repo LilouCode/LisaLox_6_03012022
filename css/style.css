@@ -77,6 +77,27 @@ body {
   color: #901C1C;
 }
 
+#CTA {
+  display: flex;
+  width: 376px;
+  padding: 0% 1%;
+  border-radius: 5px;
+  justify-content: space-between;
+  position: absolute;
+  right: 3%;
+  bottom: 0;
+  background-color: #DB8876;
+  font-size: 24px;
+  color: black;
+}
+#CTA_total-like {
+  align-self: center;
+}
+#CTA_heart {
+  width: 24px;
+  margin-right: 5%;
+}
+
 #logo:focus-visible {
   outline: solid 0.125em #DB8876;
   background-color: white;
@@ -196,19 +217,28 @@ body {
   flex-direction: column;
   width: 350px;
   justify-content: space-between;
+  font-size: 14px;
+  color: #901C1C;
 }
 .thumbImg_details {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: #901C1C;
 }
 .thumbImg_likes {
+  padding: 0%;
   display: flex;
+  border: none;
+  color: #901C1C;
+  background-color: transparent;
+}
+.thumbImg_likes_number {
+  align-self: center;
+  margin-right: 2%;
+  font-weight: 600;
 }
 .thumbImg_likes_button {
   width: 15px;
-  color: #901C1C;
+  align-self: center;
 }
 
 .photographer_section {

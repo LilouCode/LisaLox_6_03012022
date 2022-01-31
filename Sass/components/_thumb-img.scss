@@ -10,17 +10,26 @@
     flex-direction: column;
     width: 350px;
     justify-content: space-between;
+    font-size: 14px;
+    color: $color-primary-1;
     &_details{
         display: flex;
         justify-content: space-between;
-        font-size: 14px;
-        color: $color-primary-1;
     }
     &_likes{
+        padding: 0%;
         display: flex;
+        border: none;
+        color: $color-primary-1;
+        background-color: transparent;
+        &_number{
+            align-self: center;
+            margin-right: 2%;
+            font-weight: 600;
+        }
         &_button{
             width: 15px;
-            color: $color-primary-1;
+            align-self: center;
         }
     }
 }
