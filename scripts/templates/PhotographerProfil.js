@@ -9,9 +9,9 @@ class PhotographerProfileCard{
         //ajouter class
 
         const photographerProfileCard = `
-        <h1 class='profile_header'>${this._infosUser.name}</h1>
-        <h3 class= 'profile_subtitle'>${this._infosUser.localisation}</h3>
-        <p>${this._infosUser.tagline}</p>
+        <h1 class='profile_header' tabindex=0>${this._infosUser.name}</h1>
+        <div tabIndex=0><h3 class= 'profile_subtitle'>${this._infosUser.localisation}</h3>
+        <p>${this._infosUser.tagline}</p></div>
         `
         $wrapper.innerHTML= photographerProfileCard
 

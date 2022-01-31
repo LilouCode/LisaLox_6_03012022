@@ -52,6 +52,27 @@ body {
   margin: 0 100px;
 }
 
+.contact_button {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact_button:hover {
+  color: black;
+  background-color: #DB8876;
+}
+.contact_button:focus {
+  color: black;
+  background-color: #DB8876;
+}
+
 #logo:focus-visible {
   outline: solid 0.125em #DB8876;
   background-color: white;
@@ -73,19 +94,30 @@ body {
   margin: 4% 6%;
 }
 
+.photographe-profile {
+  display: flex;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin-left: 2%;
 }
 .profile_header {
   font-size: 64px;
   color: #D3573C;
   padding: 0;
+  margin-bottom: 1%;
 }
 .profile_subtitle {
   font-size: 24px;
   color: #901C1C;
+  margin: 1% 0;
+}
+.profile p {
+  color: #525252;
+  margin: 2% 0;
 }
 
 .imageUser {
@@ -246,18 +278,6 @@ h1:focus-visible {
 .modal_form span {
   font-size: 20px;
   color: #901C1C;
-}
-.modal_button {
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  border: none;
-  background-color: #901C1C;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .contact_button {

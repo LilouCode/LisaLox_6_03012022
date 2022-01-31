@@ -6,7 +6,7 @@ class PhotographerProfileImage{
     createPhotographerProfileImage(){
         const $wrapperImage = document.createElement('div');
         const photographerProfileImage = `<img src='${this._infosUser.portrait}' 
-        alt='${this._infosUser.description}' class= 'imageUser'></img>`
+        alt='${this._infosUser.description}' class= 'imageUser' tabindex=0></img>`
 
         $wrapperImage.innerHTML= photographerProfileImage
         return $wrapperImage
