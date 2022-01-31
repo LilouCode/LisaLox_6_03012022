@@ -72,6 +72,10 @@ body {
   color: black;
   background-color: #DB8876;
 }
+.contact_button--sent:hover {
+  background-color: #FAFAFA;
+  color: #901C1C;
+}
 
 #logo:focus-visible {
   outline: solid 0.125em #DB8876;
