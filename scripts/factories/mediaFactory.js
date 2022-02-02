@@ -1,10 +1,10 @@
 class mediaFactory{
     constructor(data){
-        if(!(data.video =null)){
+        if(data.video){
             return new ThumbVideo(data);
         } 
         
-        if (!(data.image = null)){
+        if (data.image){
             return new ThumbImg(data);
         } 
         

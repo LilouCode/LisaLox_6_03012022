@@ -39,8 +39,13 @@ async function getPhotographerData(photographerId){
         //CTA
         let ctaPrice = document.getElementById('CTA_price');
         ctaPrice.innerHTML= `${data.price}`;
+        //modal name
+        contactName= document.getElementById('modal_title');
+        contactName.innerHTML += `<br>${data.name}`;
       }
+  
     })
+    
   })
   
   .catch(function(error){
@@ -59,26 +64,55 @@ async function getMediaData(photographerId){
   })
   
   .then(function(objet){
+    // let allLikes = [];
+    let sum = 0;
     objet.media.forEach((media) => {
       if (photographerId == media.photographerId){
         //creation du profil
-        console.log(media) //ça marche
+        // console.log(media.video) //ça marche
         //test
-        // if(!(media.video.value = null)){
-        //   console.log(media.video)
-        // } ok !
-        let $wrapperThumbMedia = document.getElementById("grid");
-        let $wrapperThumbMediaFull = document.createElement('div');
+        const test= new mediaFactory(media);
+        console.log(test);
+        // ok !
+        const $wrapperThumbMedia = document.getElementById("grid");
+        const $wrapperThumbMediaFull = document.createElement('div');
         $wrapperThumbMediaFull.classList.add('thumbImg');
         const data = new infosMedia(media)
         const templateDetailsMedia = new ThumbMediaDetails(data);
         $wrapperThumbMedia.appendChild($wrapperThumbMediaFull);
         $wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
+        
+
+
+        // collect de likes
+        // let add =tableauLikes.push(data.likes); (version avec fichier Likes.1)
+        
+        
+        
+        //  ;
+        // for (let i = 0; i < allLikes.length; i++) {
+            sum += data.likes;
+            // console.log(sum)
+            
+        // }
+        
+        
+        
+    
       }
+      
     })
+    let $wrapperNumber = document.createElement('p');
+    $wrapperNumber.classList.add('CTA_total-like');
+    console.log(sum);
+    $wrapperNumber.innerHTML= sum;
+    $wrapperLikes = document.getElementById('CTA_likes');
+    $wrapperLikes.appendChild($wrapperNumber);
+      
   })
   
   .catch(function(error){
     alert.error
   })
-}
+} 
+

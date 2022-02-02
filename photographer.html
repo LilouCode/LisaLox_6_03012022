@@ -16,6 +16,7 @@
     <script src="./scripts/models/infosUser.js" defer></script>
     <script src="./scripts/models/infosMedia.js" defer></script>
     <!-- factory -->
+    <script src="./scripts/factories/mediaFactory.js" defer></script>
     <script src="./scripts/factories/photographerFact.js" defer></script>
     <!-- utils -->
     <script src="./scripts/utils/lightbox.js" defer></script>
@@ -42,18 +43,24 @@
         <button class="contact_button" onclick="displayModal()" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
         <div id="CTA">
-          <span>
-            <p id= "CTA_total-like"></p>
+          <div id="CTA_likes" >
              <img id="CTA_heart" src="assets/icons/like_heart--black.svg" aria-hidden="true">
-            </span>
+          </div>
             <p id="CTA_price"></p>
         </div>
       </section>
 
 
       <!-- grid media -->
-      <section id="media-grid">
-        <div id="filter"></div>
+      <section id="media-grid">    
+        <div id="filter">
+          <p>Trier par:</p>
+          <select>
+            <option value="1">Titre</option>
+            <option value="2">Popularité</option>
+            <option value="3">Date</option>
+          </select>
+        </div>
         <div id="grid"></div>
       </section>
 
@@ -62,8 +69,8 @@
     <section id="contact_modal" aria-hidden="true" class="modal" role="dialog">
 			<div class="modal" tabindex="0" role="dialog">
 				
-        <header>
-          <h2 id="modal_title" tabindex="0">Contactez-moi</h2>
+        <header class="modal_header">
+          <h2 id="modal_title" class="modal_title" tabindex="0">Contactez-moi</h2>
           <img alt="bouton fermer" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" aria-roledescription="fermer" role="button"/>
         </header>
 				
@@ -101,7 +108,7 @@
     <section id="lightbox" aria-hidden="true"  role="dialog">
       
     </section>
-    <!-- footer avec prix et likes totals -->
+    <!-- footer -->
     <footer class="footer_photographer">
 
     </footer>

@@ -27,15 +27,18 @@
     &_header{
         justify-content: space-between;
         width: 100%;
-        &_title{
-            font-size: 64px;
-            font-weight: normal;
-            text-align: center
-        }
-        &_img{
-            cursor: pointer;        
-        }
+        height: max-content;
     }
+    &_title{
+        font-size: 64px;
+        font-weight: normal;
+        text-align: left;
+        margin: 0;
+    }
+    & img{
+        cursor: pointer;        
+    }
+
     &_form{
         display: flex;
         width: 100%;
@@ -76,18 +79,18 @@
 // #contact_modal {
 //     display: none;
 // }
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
-}
+// .contact_button {
+//     font-size: 20px;
+//     font-weight: bold;
+//     color: white;
+//     padding: 11px;
+//     width: 170px;
+//     height: 70px;
+//     border: none;
+//     background-color: #901C1C;
+//     border-radius: 5px;
+//     cursor: pointer;
+// }
 
 // .modal {
 //     border-radius: 5px;
@@ -101,20 +104,20 @@
 //     margin: auto;
 // }
 
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-}
+// .modal header {
+//     justify-content: space-between;
+//     width: 100%;
+// }
 
-.modal header img {
-    cursor: pointer;
-}
+// .modal header img {
+//     cursor: pointer;
+// }
 
-.modal header h2 {
-    font-size: 64px;
-    font-weight: normal;
-    text-align: center;
-}
+// .modal header h2 {
+//     font-size: 64px;
+//     font-weight: normal;
+//     text-align: center;
+// }
 
 form {
     display: flex;
