@@ -104,6 +104,25 @@ body {
 
 #filter {
   display: flex;
+  margin-left: 4%;
+}
+#filter label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 2%;
+  align-self: center;
+}
+#filter select {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901C1C;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 #logo:focus-visible {
@@ -126,6 +145,7 @@ body {
   justify-content: space-around;
   background-color: #FAFAFA;
   margin: 4%;
+  padding: 4% 0;
 }
 
 .photographe-profile {
@@ -160,6 +180,7 @@ body {
   width: 200px;
   border-radius: 100px;
   object-fit: cover;
+  box-shadow: 5px 5px 12px 0px rgba(81, 76, 64, 0.66);
 }
 
 .thumb {
@@ -189,18 +210,19 @@ body {
   width: 200px;
   border-radius: 100px;
   object-fit: cover;
+  box-shadow: 5px 5px 12px 0px rgba(81, 76, 64, 0.66);
 }
 .thumb_city {
   margin: 0;
   color: #901C1C;
 }
 .thumb_tagline {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 1%;
   margin-top: 1%;
 }
 .thumb_price {
-  font-size: 9px;
+  font-size: 12px;
   margin: 0;
   margin-top: 1%;
   color: #757575;
@@ -220,7 +242,7 @@ body {
   justify-content: space-between;
 }
 
-.thumbImg {
+.grid_thumb {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -228,23 +250,33 @@ body {
   font-size: 14px;
   color: #901C1C;
 }
-.thumbImg_details {
+.grid_thumb_image {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+.grid_thumb_video {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+.grid_thumb_details {
   display: flex;
   justify-content: space-between;
 }
-.thumbImg_likes {
+.grid_thumb_likes {
   padding: 0%;
   display: flex;
   border: none;
   color: #901C1C;
   background-color: transparent;
 }
-.thumbImg_likes_number {
+.grid_thumb_likes_number {
   align-self: center;
   margin-right: 2%;
   font-weight: 600;
 }
-.thumbImg_likes_button {
+.grid_thumb_likes_button {
   width: 15px;
   align-self: center;
 }

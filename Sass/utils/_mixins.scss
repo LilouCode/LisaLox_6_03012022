@@ -5,9 +5,26 @@
     border-radius: 2%;   
 }
 
+@mixin button{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @mixin imageUser{
     height: 200px;
     width: 200px;
     border-radius: 100px;
     object-fit: cover; 
+    box-shadow: 5px 5px 12px 0px rgba(81, 76, 64, 0.66);
+    // & :hover{
+    //     box-shadow: 5px 5px 12px 7px rgba(81, 76, 64, 0.66);
+    // }
 }

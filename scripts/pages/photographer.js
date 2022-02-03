@@ -1,4 +1,4 @@
-////////////////////////// Profil photographe //////////////////////////
+////////////////////////// Photographer Profil //////////////////////////
 
 (async function () {
   //Recupération photographe ID
@@ -14,7 +14,7 @@
 
 })()
 
-//Récupération data photographes dans le json
+//Récupération data PHOTOGRAPHER dans le json
 async function getPhotographerData(photographerId){
   return fetch("data/photographers.json")
   
@@ -26,15 +26,15 @@ async function getPhotographerData(photographerId){
     objet.photographers.forEach((photographers) => {
       if (photographerId == photographers.id){
         //creation du profil
-        let $wrapperProfil = document.getElementById("photographer-profile");
+        let wrapperProfil = document.getElementById("photographer-profile");
         const data = new infosUser(photographers);
         const template = new PhotographerProfileCard(data);
-        $wrapperProfil.appendChild(template.createPhotographerProfileCard(photographers));
+        wrapperProfil.appendChild(template.createPhotographerProfileCard(photographers));
         console.log(template);
         // image user
-        let $wrapperImg = document.getElementById("photographer_image");
+        let wrapperImg = document.getElementById("photographer_image");
         const templateImage = new PhotographerProfileImage(data);
-        $wrapperImg.appendChild(templateImage.createPhotographerProfileImage(photographers));
+        wrapperImg.appendChild(templateImage.createPhotographerProfileImage(photographers));
         console.log(templateImage);
         //CTA
         let ctaPrice = document.getElementById('CTA_price');
@@ -55,59 +55,45 @@ async function getPhotographerData(photographerId){
 
 ////////////////////////// Grid Media //////////////////////////
 
-//Récupération data medias dans le json
+//Récupération data MEDIAS dans le json
 async function getMediaData(photographerId){
   return fetch("data/photographers.json")
   
   .then(function(response){
-    return response.json()
+    return response.json() 
   })
   
   .then(function(objet){
-    // let allLikes = [];
-    let sum = 0;
-    objet.media.forEach((media) => {
-      if (photographerId == media.photographerId){
-        //creation du profil
-        // console.log(media.video) //ça marche
-        //test
-        const test= new mediaFactory(media);
-        console.log(test);
-        // ok !
-        const $wrapperThumbMedia = document.getElementById("grid");
-        const $wrapperThumbMediaFull = document.createElement('div');
-        $wrapperThumbMediaFull.classList.add('thumbImg');
-        const data = new infosMedia(media)
-        const templateDetailsMedia = new ThumbMediaDetails(data);
-        $wrapperThumbMedia.appendChild($wrapperThumbMediaFull);
-        $wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
-        
+    let sum = 0; // pour calacul total des likes (suite plus bas: dans la boucle et après)
+    objet.media.forEach((media) => {//boucle pour chaque media...
+      if (photographerId == media.photographerId){//...qui corresponde au photographe:
 
 
-        // collect de likes
-        // let add =tableauLikes.push(data.likes); (version avec fichier Likes.1)
+        const wrapperThumbMedia = document.getElementById("grid");//recupere la div grid dans le dom
+        const wrapperThumbMediaFull = document.createElement('div');//creation d'une div
+        wrapperThumbMediaFull.classList.add('grid_thumb');//avec la class grid_thumb
         
+        const fullMedia= new mediaFactory(media);//factory image ou video
+        console.log(fullMedia);//fonctionnent retourne ThumbImg ou ThumbVideo
+        wrapperThumbMediaFull.appendChild(fullMedia);
         
+        const data = new infosMedia(media)//class infos media
+        const templateDetailsMedia = new ThumbMediaDetails(data); // creation template détails avec data(class infos media)
+        wrapperThumbMedia.appendChild(wrapperThumbMediaFull);
+        wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
         
-        //  ;
-        // for (let i = 0; i < allLikes.length; i++) {
-            sum += data.likes;
-            // console.log(sum)
-            
-        // }
-        
-        
-        
-    
+        //// collect de likes
+        sum += data.likes; // premiere declaration avant boucle et suite ci-dessous
       }
       
     })
-    let $wrapperNumber = document.createElement('p');
-    $wrapperNumber.classList.add('CTA_total-like');
+    // affichage du total like
+    let wrapperNumber = document.createElement('p');
+    wrapperNumber.classList.add('CTA_total-like');
     console.log(sum);
-    $wrapperNumber.innerHTML= sum;
-    $wrapperLikes = document.getElementById('CTA_likes');
-    $wrapperLikes.appendChild($wrapperNumber);
+    wrapperNumber.innerHTML= sum;
+    wrapperLikes = document.getElementById('CTA_likes');
+    wrapperLikes.appendChild(wrapperNumber);
       
   })
   

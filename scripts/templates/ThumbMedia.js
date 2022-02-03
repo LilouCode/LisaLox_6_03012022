@@ -4,10 +4,10 @@ class ThumbVideo{
     }
 
     createThumbVideo(){
-        const $wrapperThumbMedia = document.createElement('div')
+        const wrapperThumbMedia = document.createElement('div')
         const thumbVideo = `<video src="${this._infosMedia.video}"></video>`
-        $wrapperThumbMedia.innerHTML = thumbVideo
-        return $wrapperThumbMedia
+        wrapperThumbMedia.innerHTML = thumbVideo
+        return wrapperThumbMedia
     }
 }
 
@@ -17,9 +17,9 @@ class ThumbImg{
     }
 
     createThumbImg(){
-        const $wrapperThumbMedia = document.createElement('div')
+        const wrapperThumbMedia = document.createElement('div')
         const thumbImg = `<img src="${this._infosMedia.image}"></img>`
-        $wrapperThumbMedia.innerHTML = thumbImg
-        return $wrapperThumbMedia
+        wrapperThumbMedia.innerHTML = thumbImg
+        return wrapperThumbMedia
     }
 }

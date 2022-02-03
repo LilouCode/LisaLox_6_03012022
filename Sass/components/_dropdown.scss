@@ -1,3 +1,13 @@
 #filter{
     display: flex;
+    margin-left: 4%;
+    & label{
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 2%;
+        align-self: center
+    }
+    & select{
+        @include button;
+    }
 }

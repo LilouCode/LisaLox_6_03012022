@@ -5,13 +5,24 @@
     justify-content: space-between;
 }
 
-.thumbImg{
+.grid_thumb{
     display: flex;
     flex-direction: column;
     width: 350px;
     justify-content: space-between;
     font-size: 14px;
     color: $color-primary-1;
+    &_image{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+    }
+    &_video{
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+
+    }
     &_details{
         display: flex;
         justify-content: space-between;
