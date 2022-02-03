@@ -316,6 +316,7 @@ h1:focus-visible {
   width: 100%;
   margin: 0;
   top: 0;
+  bottom: -1500px;
   background-color: rgba(196, 196, 196, 0.4);
   -webkit-animation: slide-in-blurred-top 0.05s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: slide-in-blurred-top 0.05s cubic-bezier(0.23, 1, 0.32, 1) both;
