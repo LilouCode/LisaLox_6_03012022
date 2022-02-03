@@ -13,15 +13,10 @@
     font-size: 14px;
     color: $color-primary-1;
     &_image{
-        width: 350px;
-        height: 350px;
-        object-fit: cover;
+        @include imageGrid
     }
     &_video{
-        width: 350px;
-        height: 350px;
-        object-fit: cover;
-
+        @include imageGrid
     }
     &_details{
         display: flex;

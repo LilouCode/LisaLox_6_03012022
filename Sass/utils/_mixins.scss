@@ -28,3 +28,9 @@
     //     box-shadow: 5px 5px 12px 7px rgba(81, 76, 64, 0.66);
     // }
 }
+
+@mixin imageGrid {
+    width: 370px;
+    height: 320px;
+    object-fit: cover;
+}

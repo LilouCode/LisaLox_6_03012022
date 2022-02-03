@@ -17,7 +17,9 @@ class mediaFactory{
         } 
         
         else{
-            throw 'Fichier non pris en charge'
+            const thumbImg = `<img class="grid_thumb_image" src="assets/medias/"></img>`
+            wrapperThumbMedia.innerHTML = thumbImg
+            return wrapperThumbMedia
         }
     }
 }

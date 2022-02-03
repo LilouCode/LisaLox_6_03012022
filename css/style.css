@@ -251,13 +251,13 @@ body {
   color: #901C1C;
 }
 .grid_thumb_image {
-  width: 350px;
-  height: 350px;
+  width: 370px;
+  height: 320px;
   object-fit: cover;
 }
 .grid_thumb_video {
-  width: 350px;
-  height: 350px;
+  width: 370px;
+  height: 320px;
   object-fit: cover;
 }
 .grid_thumb_details {
