@@ -30,7 +30,10 @@
 }
 
 @mixin imageGrid {
-    width: 370px;
-    height: 320px;
+    width: 350px;
+    height: 300px;
     object-fit: cover;
+    border-radius: 5px;
+    object-position: top 5%;
+    cursor: pointer;
 }

@@ -74,7 +74,7 @@ async function getMediaData(photographerId){
         wrapperThumbMediaFull.classList.add('grid_thumb');//avec la class grid_thumb
         
         const fullMedia= new mediaFactory(media);//factory image ou video
-        console.log(fullMedia);//fonctionnent retourne ThumbImg ou ThumbVideo
+        // console.log(fullMedia);//fonctionnent retourne ThumbImg ou ThumbVideo
         wrapperThumbMediaFull.appendChild(fullMedia);
         
         const data = new infosMedia(media)//class infos media

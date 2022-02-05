@@ -240,6 +240,7 @@ body {
   flex-wrap: wrap;
   margin: 4%;
   justify-content: space-between;
+  padding-top: 2%;
 }
 
 .grid_thumb {
@@ -249,16 +250,23 @@ body {
   justify-content: space-between;
   font-size: 14px;
   color: #901C1C;
+  margin-bottom: 7%;
 }
 .grid_thumb_image {
-  width: 370px;
-  height: 320px;
+  width: 350px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 5px;
+  object-position: top 5%;
+  cursor: pointer;
 }
 .grid_thumb_video {
-  width: 370px;
-  height: 320px;
+  width: 350px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 5px;
+  object-position: top 5%;
+  cursor: pointer;
 }
 .grid_thumb_details {
   display: flex;
@@ -270,6 +278,7 @@ body {
   border: none;
   color: #901C1C;
   background-color: transparent;
+  cursor: pointer;
 }
 .grid_thumb_likes_number {
   align-self: center;
@@ -411,6 +420,15 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+#lightbox {
+  display: none;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin: 4%;
     justify-content: space-between;
+    padding-top: 2%;
 }
 
 .grid_thumb{
@@ -12,6 +13,7 @@
     justify-content: space-between;
     font-size: 14px;
     color: $color-primary-1;
+    margin-bottom: 7%;
     &_image{
         @include imageGrid
     }
@@ -28,6 +30,7 @@
         border: none;
         color: $color-primary-1;
         background-color: transparent;
+        cursor: pointer;
         &_number{
             align-self: center;
             margin-right: 2%;
