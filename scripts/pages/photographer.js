@@ -64,24 +64,52 @@ async function getMediaData(photographerId){
   })
   
   .then(function(objet){
+    
     let sum = 0; // pour calacul total des likes (suite plus bas: dans la boucle et après)
+    // console.log(objet.media);
+    //// attention boucle pour chaque média:
     objet.media.forEach((media) => {//boucle pour chaque media...
+      
       if (photographerId == media.photographerId){//...qui corresponde au photographe:
-
-
+        
         const wrapperThumbMedia = document.getElementById("grid");//recupere la div grid dans le dom
         const wrapperThumbMediaFull = document.createElement('div');//creation d'une div
         wrapperThumbMediaFull.classList.add('grid_thumb');//avec la class grid_thumb
         
         const fullMedia= new mediaFactory(media);//factory image ou video
+
         // console.log(fullMedia);//fonctionnent retourne ThumbImg ou ThumbVideo
         wrapperThumbMediaFull.appendChild(fullMedia);
         
         const data = new infosMedia(media)//class infos media
+       
+        /////// lightbox 
+        init()
+        
+        //like ou dislike//
+        let i = data.likes;
+        function likeOrDislikeMedia() {
+          const number = document.getElementById('l'+(data.title));
+          if(number.value == i){
+              number.value = ++i
+          } 
+          else{
+              number.value = --i
+          }
+          console.log(number.value);
+        }
+        ////////////////////////////////////
+
         const templateDetailsMedia = new ThumbMediaDetails(data); // creation template détails avec data(class infos media)
+        
+        
         wrapperThumbMedia.appendChild(wrapperThumbMediaFull);
         wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
-        
+       
+        const buttonLike = document.getElementById('b'+(data.title)); 
+        buttonLike.addEventListener('click', likeOrDislikeMedia());
+       
+       
         //// collect de likes
         sum += data.likes; // premiere declaration avant boucle et suite ci-dessous
       }
@@ -100,5 +128,7 @@ async function getMediaData(photographerId){
   .catch(function(error){
     alert.error
   })
+
+  
 } 
 

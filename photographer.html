@@ -15,12 +15,16 @@
     <!-- models -->
     <script src="./scripts/models/infosUser.js" defer></script>
     <script src="./scripts/models/infosMedia.js" defer></script>
+     
     <!-- factory -->
     <script src="./scripts/factories/mediaFactory.js" defer></script>
     <script src="./scripts/factories/photographerFact.js" defer></script>
+
     <!-- utils -->
+    <script src="./scripts/utils/likeBtn.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
+   
     <!-- page -->
     <script src="./scripts/pages/photographer.js" defer></script>
     
@@ -99,7 +103,7 @@
 
           <div class="formData" aria-hidden="true">
             <label for="message" tabindex="0">Votre message</label>
-            <input required type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message">
+            <textarea required type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message"> </textarea>
             <span id="message_error" class="input-error" aria-hidden="true"></span>
 					</div>
           <button class="contact_button contact_button--sent" type="submit">Envoyer</button>
@@ -108,7 +112,7 @@
     </section>
 
     <!-- lightbox -->
-    <section id="lightbox" aria-hidden="true"  role="dialog">
+    <section id="lightbox" class= "lightbox" aria-hidden="true"  role="dialog">
     </section>
 
   </body>

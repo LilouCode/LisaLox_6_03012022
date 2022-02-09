@@ -422,13 +422,53 @@ form input {
   border-radius: 5px;
 }
 
-#lightbox {
+.lightbox {
   display: none;
   background-color: white;
   position: fixed;
   top: 0px;
   width: 100vw;
   height: 100vh;
+  transition: opacity 0.3s;
+}
+.lightbox.fadeOut {
+  opacity: 0;
+}
+.lightbox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.lightbox__loader {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  background-color: #D3573C;
+}
+.lightbox__image {
+  height: 100vh;
+}
+.lightbox__btn__close {
+  width: 100px;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  cursor: pointer;
+}
+.lightbox__btn__next {
+  width: 80px;
+  position: fixed;
+  top: 50%;
+  right: 4%;
+  cursor: pointer;
+}
+.lightbox__btn__prev {
+  width: 80px;
+  position: fixed;
+  top: 50%;
+  left: 4%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
