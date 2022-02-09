@@ -87,17 +87,13 @@ async function getMediaData(photographerId){
         init()
         
         //like ou dislike//
-        let i = data.likes;
-        function likeOrDislikeMedia() {
-          const number = document.getElementById('l'+(data.title));
-          if(number.value == i){
-              number.value = ++i
-          } 
-          else{
-              number.value = --i
-          }
-          console.log(number.value);
-        }
+        
+        // function likeOrDislikeMedia() {
+        //   let i = document.getElementById('like_'+(data.title)).innerHTML;
+        //   i++;
+        //   console.log(i)
+        //   document.getElementById('like_'+(data.title)).innerHTML= i;
+        // }
         ////////////////////////////////////
 
         const templateDetailsMedia = new ThumbMediaDetails(data); // creation template détails avec data(class infos media)
@@ -106,12 +102,24 @@ async function getMediaData(photographerId){
         wrapperThumbMedia.appendChild(wrapperThumbMediaFull);
         wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
        
-        const buttonLike = document.getElementById('b'+(data.title)); 
-        buttonLike.addEventListener('click', likeOrDislikeMedia());
-       
-       
         //// collect de likes
         sum += data.likes; // premiere declaration avant boucle et suite ci-dessous
+
+        ///////// Bouton like ou dislike //////////
+        const buttonLike = document.getElementById('button_'+(data.title)); 
+        buttonLike.addEventListener('click', function() {
+          let i = document.getElementById('like_'+(data.title)).innerHTML;
+          if (i == data.likes){
+            i++;
+            sum ++;
+          } else{
+            i--;
+            sum--;
+          }
+          wrapperNumber.innerHTML= sum;
+          document.getElementById('like_'+(data.title)).innerHTML= i;
+        });
+       
       }
       
     })

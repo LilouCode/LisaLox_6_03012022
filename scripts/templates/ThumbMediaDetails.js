@@ -8,8 +8,8 @@ class ThumbMediaDetails{
         wrapperThumbMediaDetails.classList.add('grid_thumb_details')
 
         const thumbMediaDetails = `<p class='grid_thumb_title'>${this._infosMedia.title}</p>
-        <button id='b${this._infosMedia.title}' class='grid_thumb_likes' onclick=''> 
-        <p id='l${this._infosMedia.title}' class='grid_thumb_likes_number'>${this._infosMedia.likes}</p>
+        <button id='button_${this._infosMedia.title}' class='grid_thumb_likes' onclick=''> 
+        <span id='like_${this._infosMedia.title}' class='grid_thumb_likes_number'>${this._infosMedia.likes}</span>
         <img class='grid_thumb_likes_button' src='assets/icons/like_heart.svg' alt="j'aime" role='button' aria-hidden='true'></img>
         </button>
         `
