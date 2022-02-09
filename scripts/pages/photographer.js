@@ -66,8 +66,9 @@ async function getMediaData(photographerId){
   .then(function(objet){
     
     let sum = 0; // pour calacul total des likes (suite plus bas: dans la boucle et après)
-    // console.log(objet.media);
-    //// attention boucle pour chaque média:
+
+
+    // attention boucle:
     objet.media.forEach((media) => {//boucle pour chaque media...
       
       if (photographerId == media.photographerId){//...qui corresponde au photographe:
@@ -86,14 +87,6 @@ async function getMediaData(photographerId){
         /////// lightbox 
         init()
         
-        //like ou dislike//
-        
-        // function likeOrDislikeMedia() {
-        //   let i = document.getElementById('like_'+(data.title)).innerHTML;
-        //   i++;
-        //   console.log(i)
-        //   document.getElementById('like_'+(data.title)).innerHTML= i;
-        // }
         ////////////////////////////////////
 
         const templateDetailsMedia = new ThumbMediaDetails(data); // creation template détails avec data(class infos media)

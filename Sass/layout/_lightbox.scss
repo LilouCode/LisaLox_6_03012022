@@ -27,6 +27,7 @@
     }
     &__btn{
         &__close{
+            z-index: 1000;
             width: 100px;
             position: fixed;
             top: 2%;
@@ -34,18 +35,26 @@
             cursor: pointer;
         }
         &__next{
-            width: 80px;
+            z-index: 1000;
+            width: 100px;
+            height: 100px;
+            border: none;
             position: fixed;
             top: 50%;
             right: 4%;
             cursor: pointer;
+            background: no-repeat url(/assets/icons/arrow-next.svg);
         }
         &__prev{
-            width: 80px;
+            z-index: 1000;
+            width: 100px;
+            height: 100px;
+            border: none;
             position: fixed;
             top: 50%;
             left: 4%;
             cursor: pointer;
+            background: no-repeat url(/assets/icons/arrow-prev.svg);
         }
     }
    

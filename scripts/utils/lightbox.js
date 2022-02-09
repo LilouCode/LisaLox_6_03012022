@@ -61,19 +61,35 @@ class Lightbox{
     */
     loadImage (url){
         this.url = null
-        const image = new Image();
-        image.classList.add('lightbox__image'); 
         const container = this.element.querySelector('.lightbox__container');
         const loader = document.createElement('div');
         loader.classList.add('lightbox__loader')
         container.innerHTML = '';
         container.appendChild(loader);
-        image.onload = () => {
-            container.removeChild(loader)
-            container.appendChild(image)
-            this.url = url
+        if(url.includes(".mp4")){
+            console.log("c'est un fichier mp4")
+            const image = document.createElement('video');
+            image.setAttribute("type","video/mp4");
+            image.classList.add('lightbox__video');
+            // image.onload = () => {
+                container.removeChild(loader)
+                container.appendChild(image)
+                this.url = url
+            // }
+            image.src = url
+            image.width= "900"
+            image.autoplay = true;
+        }else{
+            const image = document.createElement('img');
+            image.classList.add('lightbox__image');
+            image.onload = () => {
+                container.removeChild(loader)
+                container.appendChild(image)
+                this.url = url
+            }
+            image.src = url
         }
-        image.src = url
+        
     }
     /** 
      * @param {string} url URL de l'image
@@ -82,8 +98,8 @@ class Lightbox{
     builDOM (url){
         const dom = document.getElementById('lightbox')
         dom.innerHTML = ` <img alt="bouton fermer" class="lightbox__btn__close" src="assets/icons/close--red.svg" onclick="closeLightbox()" tabindex="0" aria-roledescription="fermer" role="button"/>
-        <img alt="bouton suivant" class="lightbox__btn__next" src="assets/icons/arrow-right.svg" tabindex="0" aria-roledescription="media suivant" role="button"/>
-        <img alt="bouton précédent" class="lightbox__btn__prev" src="assets/icons/arrow-left.svg" onclick="" tabindex="0" aria-roledescription="media précédent" role="button"/>
+        <button alt="bouton suivant" class="lightbox__btn__next" tabindex="0" aria-roledescription="media suivant"></button>
+        <button alt="bouton précédent" class="lightbox__btn__prev" onclick="" tabindex="0" aria-roledescription="media précédent"></button>
         <div class="lightbox__container"></div>
         </div>
         `
