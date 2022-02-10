@@ -26,7 +26,8 @@ function closeLightbox(){
 
 function init(){// avec lightbox.js :
     const links = Array.from(document.querySelectorAll('a[href$=".jpg"], a[href$=".mp4"]'))
-    const images = links.map(link => link.getAttribute('href'))
+    // console.log(links);
+    const images = links.map(link => link.getAttribute('href'));
     links.forEach(link => link.addEventListener('click',e =>{ 
             e.preventDefault()
             new Lightbox(e.currentTarget.getAttribute('href'),images)
@@ -79,6 +80,8 @@ class Lightbox{
             image.src = url
             image.width= "900"
             image.autoplay = true;
+            image.loop = true;
+            image.controls= true;
         }else{
             const image = document.createElement('img');
             image.classList.add('lightbox__image');
@@ -91,59 +94,59 @@ class Lightbox{
         }
         
     }
+    /**
+     * 
+     * @param {KeyboardEvent} e
+     *  
+     */
+    onKeyUp (e){
+        if(e.key === 'ArrowLeft'){
+            this.prevMedia(e)
+        } else if (e.key === 'ArrowRight'){
+            this.nextMedia(e)
+        }
+    }
+    /**
+     * @param {MouseEvent/KeyboardEvent} e
+     */
+    nextMedia (e){
+        e.preventDefault()
+        let i = this.images.findIndex(image => image=== this.url)
+        if (i=== this.images.length -1){
+            i= -1
+        }
+        this.loadImage(this.images[i +1])
+    }
+
+     /**
+     * @param {MouseEvent/KeyboardEvent} e
+     */
+      prevMedia (e){
+        e.preventDefault()
+        let i = this.images.findIndex(image => image=== this.url)
+        if (i=== 0){
+            i= this.images.length 
+        }
+        this.loadImage(this.images[i -1])
+    }
     /** 
      * @param {string} url URL de l'image
      * @return {HTMLElement}
     */
+    
     builDOM (url){
         const dom = document.getElementById('lightbox')
         dom.innerHTML = ` <img alt="bouton fermer" class="lightbox__btn__close" src="assets/icons/close--red.svg" onclick="closeLightbox()" tabindex="0" aria-roledescription="fermer" role="button"/>
         <button alt="bouton suivant" class="lightbox__btn__next" tabindex="0" aria-roledescription="media suivant"></button>
-        <button alt="bouton précédent" class="lightbox__btn__prev" onclick="" tabindex="0" aria-roledescription="media précédent"></button>
+        <button alt="bouton précédent" class="lightbox__btn__prev" tabindex="0" aria-roledescription="media précédent"></button>
         <div class="lightbox__container"></div>
         </div>
         `
+        dom.querySelector('.lightbox__btn__next').addEventListener('click', this.nextMedia.bind(this))
+        dom.querySelector('.lightbox__btn__prev').addEventListener('click', this.prevMedia.bind(this))
         return dom
+        
     }
+    
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function createMediaLightbox (){
-//     const mediaLightbox= new mediaFactory;
-//     lightbox.appendChild(mediaLightbox);
-//     return lightbox
-// }
-//////////////////////////////////////////////////////
-// mediasGrid.forEach(mediasGrid => {
-//     mediasGrid.addEventListener('click', e =>{
-//         displayLightbox()
-//     })
-// })
-// /////////////////////////////////
-// displayLightbox()
-
-// function createMediaBox (){
-//     url= mediaGrid.src.nodeValue;
-//     const mediaBox = new mediaFactory;
-//     lightbox.appendChild(mediaBox);
-// }
-// mediaGrid.forEach(mediaGrid =>{
-//     mediaGrid.addEventListener('click', function (){
-//         displayLightbox ();
-//     })
-// })
