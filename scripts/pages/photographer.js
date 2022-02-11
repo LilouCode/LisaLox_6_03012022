@@ -61,15 +61,34 @@ async function getMediaData(photographerId){
   
   .then(function(response){
     return response.json() 
+    
   })
   
   .then(function(objet){
-    
     let sum = 0; // pour calacul total des likes (suite plus bas: dans la boucle et après)
 
+   
+    // Tri par POPULARITE
+    // objet.media.sort(function (a,b){
+    //   return b.likes -a.likes;
+    // });
 
+    // //Tri par TITRE
+    // objet.media.sort(function (a,b){
+    //   if(a.title.toLowerCase() < b.title.toLowerCase()){
+    //     return  -1;
+    //   } else if (a.title.toLowerCase() > b.title.toLowerCase()){
+    //     return 1;
+    //   }
+    // });
+    //Tri par Date
+    objet.media.sort(function (a,b){
+      return (new Date(a.date).valueOf()) - (new Date(b.data).valueOf());
+    });
+    console.table(objet.media)//tableau plein pour tri
     // attention boucle:
     objet.media.forEach((media) => {//boucle pour chaque media...
+      // tab.push(media) //pour tri
       
       if (photographerId == media.photographerId){//...qui corresponde au photographe:
         
@@ -116,7 +135,13 @@ async function getMediaData(photographerId){
       }
       
     })
-    // affichage du total like
+    
+    // this.tab.sort(function (a, b){
+    //   return a.title.loacalCompare(b.title);
+    // }) //tri des medias
+    
+    
+     // affichage du total like
     let wrapperNumber = document.createElement('p');
     wrapperNumber.classList.add('CTA_total-like');
     console.log(sum);
@@ -129,7 +154,6 @@ async function getMediaData(photographerId){
   .catch(function(error){
     alert.error
   })
-
   
 } 
 

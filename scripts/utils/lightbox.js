@@ -8,8 +8,6 @@ const mediasGrid= document.getElementsByClassName("grid_thumb_media");//images e
 const mainWrapper = document.getElementById('main');//main
 
 console.log(mediasGrid);//test
-// const test = mediasGrid.item[1];
-// console.log(test)
 
 /////////Display lightbox/////////
 function displayLightbox () {
