@@ -82,13 +82,12 @@ async function getMediaData(photographerId){
     //   }
     // });
     //Tri par Date
-    objet.media.sort(function (a,b){
-      return (new Date(a.date).valueOf()) - (new Date(b.data).valueOf());
-    });
+    // objet.media.sort(function (a,b){
+    //   return (new Date(a.date).valueOf()) - (new Date(b.data).valueOf());
+    // });
     console.table(objet.media)//tableau plein pour tri
     // attention boucle:
     objet.media.forEach((media) => {//boucle pour chaque media...
-      // tab.push(media) //pour tri
       
       if (photographerId == media.photographerId){//...qui corresponde au photographe:
         
@@ -103,8 +102,7 @@ async function getMediaData(photographerId){
         
         const data = new infosMedia(media)//class infos media
        
-        /////// lightbox 
-        init()
+        
         
         ////////////////////////////////////
 
@@ -114,6 +112,8 @@ async function getMediaData(photographerId){
         wrapperThumbMedia.appendChild(wrapperThumbMediaFull);
         wrapperThumbMediaFull.appendChild(templateDetailsMedia.createThumbMediaDetails(media))
        
+        /////// lightbox 
+        init()
         //// collect de likes
         sum += data.likes; // premiere declaration avant boucle et suite ci-dessous
 
