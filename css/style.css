@@ -106,13 +106,21 @@ body {
   display: flex;
   margin-left: 4%;
 }
-#filter label {
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown__label {
   font-size: 18px;
   font-weight: 700;
   margin-right: 2%;
   align-self: center;
 }
-#filter select {
+.dropdown__btn {
+  background: url(/assets/icons/dropdown-close.svg) no-repeat right;
+}
+.dropdown button {
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -123,6 +131,28 @@ body {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+  border-radius: 0%;
+  font-size: 18px;
+  width: 170px;
+  height: 69px;
+  font-weight: 600;
+}
+.dropdown button:hover {
+  color: black;
+  background-color: #DB8876;
+}
+.dropdown button:focus {
+  color: black;
+  background-color: #DB8876;
+}
+.dropdown__content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.show {
+  display: block;
 }
 
 #logo:focus-visible {

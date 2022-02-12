@@ -1,13 +1,33 @@
 #filter{
     display: flex;
     margin-left: 4%;
-    & label{
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    &__label{
         font-size: 18px;
         font-weight: 700;
         margin-right: 2%;
         align-self: center
     }
-    & select{
-        @include button;
+    &__btn{
+        background: url(/assets/icons/dropdown-close.svg) no-repeat right;
     }
+    & button{
+        @include button;
+        border-radius: 0%;
+        font-size: 18px;
+        width: 170px;
+        height: 69px;
+        font-weight: 600;
+    }
+    &__content{
+        display: none;
+        position: absolute;
+        z-index: 1
+    }
+}
+.show{
+    display: block;
 }

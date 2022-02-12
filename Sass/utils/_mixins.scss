@@ -16,6 +16,15 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    &:hover{
+        color: black;
+        background-color: $color-secondary-1;
+    }
+    &:focus{
+        color: black;
+        background-color: $color-secondary-1;
+    }
+
 }
 
 @mixin imageUser{

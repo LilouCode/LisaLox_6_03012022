@@ -21,6 +21,7 @@
     <script src="./scripts/factories/photographerFact.js" defer></script>
 
     <!-- utils -->
+    <script src="./scripts/utils/dropdown.js" defer></script>
     <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
    
@@ -55,13 +56,18 @@
 
       <!-- grid media -->
       <section id="media-grid">    
+
         <div id="filter">
-          <label for="choix" tabindex="0">Trier par:</label>
-          <select id="choix" tabindex="0">
-            <option value="1">Titre</option>
-            <option value="2">Popularité</option>
-            <option value="3">Date</option>
-          </select>
+          <label for="filter"  class="dropdown__label">Trier par </label>
+          
+          <div class="dropdown">
+            <button class="dropdown__btn" onclick="dropdownOpenClose()"></button>
+            <div id="selection" class="dropdown__content">
+              <button>Titre</button>
+              <button>Popularité</button>
+            </div>
+          </div>
+        
         </div>
         <div id="grid"></div>
       </section>

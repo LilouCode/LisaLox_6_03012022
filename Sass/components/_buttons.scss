@@ -1,13 +1,5 @@
 .contact_button{
     @include button;
-    &:hover{
-        color: black;
-        background-color: $color-secondary-1;
-    }
-    &:focus{
-        color: black;
-        background-color: $color-secondary-1;
-    }
     &--sent:hover{
         background-color: $color-secondary-3;
         color: $color-primary-1;
