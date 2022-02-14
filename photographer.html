@@ -21,13 +21,13 @@
     <script src="./scripts/factories/photographerFact.js" defer></script>
 
     <!-- utils -->
-    <script src="./scripts/utils/dropdown.js" defer></script>
+    <script src="./scripts/utils/dropdown.js" defer></script> 
     <script src="./scripts/utils/lightbox.js" defer></script>
     <script src="./scripts/utils/contactForm.js" defer></script>
    
     <!-- page -->
     <script src="./scripts/pages/photographer.js" defer></script>
-    
+   
   </head>
   <body>
 
@@ -61,10 +61,10 @@
           <label for="filter"  class="dropdown__label">Trier par </label>
           
           <div class="dropdown">
-            <button class="dropdown__btn" onclick="dropdownOpenClose()"></button>
+            <button id="dropdownButton" class="dropdown__btn" onclick="dropdownOpenClose()"></button>
             <div id="selection" class="dropdown__content">
-              <button>Titre</button>
-              <button>Popularité</button>
+              <button id="titreBtn">Titre</button>
+              <button id="popBtn">Popularité</button>
             </div>
           </div>
         

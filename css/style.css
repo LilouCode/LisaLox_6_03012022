@@ -120,6 +120,12 @@ body {
 .dropdown__btn {
   background: url(/assets/icons/dropdown-close.svg) no-repeat right;
 }
+.dropdown__btn--open {
+  background: url(/assets/icons/dropdown-open.svg) no-repeat right;
+}
+.dropdown--remove {
+  display: none;
+}
 .dropdown button {
   font-size: 20px;
   font-weight: bold;
@@ -131,6 +137,7 @@ body {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+  display: block;
   border-radius: 0%;
   font-size: 18px;
   width: 170px;

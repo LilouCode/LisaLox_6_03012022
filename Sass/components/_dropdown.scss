@@ -13,9 +13,16 @@
     }
     &__btn{
         background: url(/assets/icons/dropdown-close.svg) no-repeat right;
+        &--open{
+            background: url(/assets/icons/dropdown-open.svg) no-repeat right;
+        }
+    }
+    &--remove{
+        display: none;
     }
     & button{
         @include button;
+        display: block;
         border-radius: 0%;
         font-size: 18px;
         width: 170px;

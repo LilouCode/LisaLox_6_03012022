@@ -4,7 +4,7 @@ class mediaFactory{
             // return new ThumbVideo(data);
             const wrapperThumbMedia = document.createElement('a')
             wrapperThumbMedia.setAttribute('href','assets/medias/'+data.photographerId+'/'+data.video)
-            const thumbVideo = `<video onclick="displayLightbox()" class="grid_thumb_video grid_thumb_media" src="assets/medias/${data.photographerId}/${data.video}"></video>`
+            const thumbVideo = `<video alt='${data.title}' onclick="displayLightbox()" class="grid_thumb_video grid_thumb_media" src="assets/medias/${data.photographerId}/${data.video}"></video>`
             wrapperThumbMedia.innerHTML = thumbVideo
             return wrapperThumbMedia
         } 
@@ -13,7 +13,7 @@ class mediaFactory{
             // return new ThumbImg(data);
             const wrapperThumbMedia = document.createElement('a');
             wrapperThumbMedia.setAttribute('href','assets/medias/'+data.photographerId+'/'+data.image)
-            const thumbImg = `<img onclick="displayLightbox()" class="grid_thumb_image grid_thumb_media" src="assets/medias/${data.photographerId}/${data.image}"></img>`
+            const thumbImg = `<img alt='${data.title}' onclick="displayLightbox()" class="grid_thumb_image grid_thumb_media" src="assets/medias/${data.photographerId}/${data.image}"></img>`
             wrapperThumbMedia.innerHTML = thumbImg;
             return wrapperThumbMedia
         } 

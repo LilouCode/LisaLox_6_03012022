@@ -21,6 +21,16 @@ function closeLightbox(){
     mainWrapper.setAttribute('aria-hidden', 'false');
     modal.setAttribute('aria-hidden','true');
 }
+window.addEventListener("keydown", function (event) {
+    if (lightbox.style.display == 'flex'){
+        if(event.key === "Escape" ){
+            closeLightbox();
+          }   
+    }
+})
+
+
+
 
 function init(){// avec lightbox.js :
     const links = Array.from(document.querySelectorAll('a[href$=".jpg"], a[href$=".mp4"]'))
@@ -51,8 +61,10 @@ class Lightbox{
     constructor (url, images){
         this.element = this.builDOM(url)
         this.loadImage(url)
+        this.onKeyUp = this.onKeyUp.bind(this)
         this.images = images
         document.body.appendChild(this.element)
+        document.addEventListener('keyup',this.onKeyUp)
     }
     
     /** 
@@ -92,18 +104,20 @@ class Lightbox{
         }
         
     }
-    /**
+     /**
      * 
      * @param {KeyboardEvent} e
      *  
      */
-    onKeyUp (e){
+    
+      onKeyUp (e){
         if(e.key === 'ArrowLeft'){
             this.prevMedia(e)
         } else if (e.key === 'ArrowRight'){
             this.nextMedia(e)
         }
     }
+   
     /**
      * @param {MouseEvent/KeyboardEvent} e
      */
@@ -119,7 +133,7 @@ class Lightbox{
      /**
      * @param {MouseEvent/KeyboardEvent} e
      */
-      prevMedia (e){
+    prevMedia (e){
         e.preventDefault()
         let i = this.images.findIndex(image => image=== this.url)
         if (i=== 0){
@@ -127,6 +141,8 @@ class Lightbox{
         }
         this.loadImage(this.images[i -1])
     }
+    
+    
     /** 
      * @param {string} url URL de l'image
      * @return {HTMLElement}
@@ -142,9 +158,11 @@ class Lightbox{
         `
         dom.querySelector('.lightbox__btn__next').addEventListener('click', this.nextMedia.bind(this))
         dom.querySelector('.lightbox__btn__prev').addEventListener('click', this.prevMedia.bind(this))
+        
         return dom
         
     }
+
     
     
 }

@@ -67,25 +67,11 @@ async function getMediaData(photographerId){
   .then(function(objet){
     let sum = 0; // pour calacul total des likes (suite plus bas: dans la boucle et après)
 
-   
-    // Tri par POPULARITE
-    // objet.media.sort(function (a,b){
-    //   return b.likes -a.likes;
-    // });
-
-    // //Tri par TITRE
-    // objet.media.sort(function (a,b){
-    //   if(a.title.toLowerCase() < b.title.toLowerCase()){
-    //     return  -1;
-    //   } else if (a.title.toLowerCase() > b.title.toLowerCase()){
-    //     return 1;
-    //   }
-    // });
-    //Tri par Date
-    // objet.media.sort(function (a,b){
-    //   return (new Date(a.date).valueOf()) - (new Date(b.data).valueOf());
-    // });
+   //TRIER
+    objet.media.sort(trierParTitre);
     console.table(objet.media)//tableau plein pour tri
+    ///////////////
+
     // attention boucle:
     objet.media.forEach((media) => {//boucle pour chaque media...
       
@@ -133,12 +119,7 @@ async function getMediaData(photographerId){
         });
        
       }
-      
     })
-    
-    // this.tab.sort(function (a, b){
-    //   return a.title.loacalCompare(b.title);
-    // }) //tri des medias
     
     
      // affichage du total like
