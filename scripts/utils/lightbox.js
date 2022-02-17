@@ -39,7 +39,8 @@ function init(){// avec lightbox.js :
     links.forEach(link => link.addEventListener('click',e =>{ 
             e.preventDefault()
             new Lightbox(e.currentTarget.getAttribute('href'),images)
-        }))
+    }))
+    
 }
 
 ////////////////////////////////////
@@ -73,17 +74,17 @@ class Lightbox{
     loadImage (url){
         this.url = null
         const container = this.element.querySelector('.lightbox__container');
-        const loader = document.createElement('div');
-        loader.classList.add('lightbox__loader')
+        // const loader = document.createElement('div');
+        // loader.classList.add('lightbox__loader')
         container.innerHTML = '';
-        container.appendChild(loader);
+        // container.appendChild(loader);
         if(url.includes(".mp4")){
             console.log("c'est un fichier mp4")
             const image = document.createElement('video');
             image.setAttribute("type","video/mp4");
             image.classList.add('lightbox__video');
             // image.onload = () => {
-                container.removeChild(loader)
+                // container.removeChild(loader)
                 container.appendChild(image)
                 this.url = url
             // }
@@ -95,11 +96,11 @@ class Lightbox{
         }else{
             const image = document.createElement('img');
             image.classList.add('lightbox__image');
-            image.onload = () => {
-                container.removeChild(loader)
+            // image.onload = () => {
+                // container.removeChild(loader)
                 container.appendChild(image)
                 this.url = url
-            }
+            // }
             image.src = url
         }
         

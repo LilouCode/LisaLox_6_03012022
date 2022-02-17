@@ -280,6 +280,14 @@ body {
   padding-top: 2%;
 }
 
+.grid_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4%;
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
 .grid_thumb {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name, portrait, city, tagline, price, description, id } = data;
+    const { name, portrait, city, country, tagline, price, description, id } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -29,9 +29,9 @@ function photographerFactory(data) {
         h2.textContent = name;
         h2.classList.add("thumb_name");
     
-    // Ville
+    // Ville et pays
         const h3 = document.createElement( 'h3' );
-        h3.textContent = city;
+        h3.textContent = city + " "+ country;
         h3.classList.add("thumb_city");
     
     // Description
