@@ -277,22 +277,23 @@ body {
   flex-wrap: wrap;
   margin: 4%;
   justify-content: space-between;
-  padding-top: 2%;
 }
 
 .grid_wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 4%;
-  justify-content: space-between;
+  margin: 0%;
   padding-top: 2%;
+}
+.grid_wrapper:first-child {
+  margin-left: 0;
 }
 
 .grid_thumb {
   display: flex;
   flex-direction: column;
   width: 350px;
-  justify-content: space-between;
+  margin: 3.6%;
   font-size: 14px;
   color: #901C1C;
   margin-bottom: 7%;
