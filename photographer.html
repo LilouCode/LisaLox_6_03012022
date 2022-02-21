@@ -29,7 +29,7 @@
     <script src="./scripts/pages/photographer.js" defer></script>
    
   </head>
-  <body>
+  <body id="body">
 
     <header role="banner">
       <a href="index.html" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="-1">
@@ -37,13 +37,13 @@
       </a>
     </header>
     
-    <main id="main" role="main">
+    <main id="main" role="main"  aria-hidden="false">
      
      
       <!-- header profile photographe -->
       <section id="photograph-header">
         <div id="photographer-profile"></div>
-        <button class="contact_button" onclick="displayModal()" data-keyboard="true">Contactez-moi</button>
+        <button class="contact_button" onclick="displayModal()" id="contactButton" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
         <div id="CTA" tabindex="0">
           <div id="CTA_likes" >
@@ -65,6 +65,7 @@
             <div id="selection" class="dropdown__content">
               <button id="titreBtn">Titre</button>
               <button id="popBtn">Popularité</button>
+              <button id="dateBtn">Date</button>
             </div>
           </div>
         
@@ -112,7 +113,8 @@
             <span id="message_error" class="input-error" aria-hidden="true"></span>
 					</div>
           <button class="contact_button contact_button--sent" type="submit">Envoyer</button>
-				</form>            
+        </form>      
+        <span id="message_validation" class="message-validation" aria-hidden="true"></span>      
 			</div>
     </section>
 

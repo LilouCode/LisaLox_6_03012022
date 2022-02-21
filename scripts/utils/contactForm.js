@@ -1,9 +1,6 @@
-//// fix okay, console.log de l'envoi ok, reste a faire:
-// validation champ message
-// setAttribute("aria-invalid", "true")
-
-
 ///////////////////////////DOM elements///////////////////////////
+const bodyW= document.getElementById('body');
+const mainWrap = document.getElementById('main');
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
@@ -13,21 +10,24 @@ let lastNameError = document.getElementById("last-name_error")
 let emailError = document.getElementById('email_error')
 let messageError = document.getElementById('message_error')
 const form = document.getElementById('form');
+let messageValidation = document.getElementById('message_validation');
 const modal = document.getElementById('contact_modal');
-
-
+const contactButton = document.getElementById('contactButton');
 ///////////////////////////launch and close modal///////////////////////////
 //lauch modal event
+
 function displayModal() {
   const modal = document.getElementById('contact_modal');
-	const mainWrapper = document.getElementById('main');
   modal.style.display = 'flex';
-  mainWrapper.setAttribute('aria-hidden', 'true');
+  // bodyW.classList.add('no-scroll');
+  mainWrap.setAttribute('aria-hidden', 'true');
+  mainWrap.tabIndex= "-1";
   modal.setAttribute('aria-hidden','false');
 }
-
+// document.getElementById('contactButton').addEventListener("click", displayModal());
 //close modal event
 function closeModal() {
+  // bodyW.classList.remove('no-scroll');
   const modal = document.getElementById('contact_modal');
   modal.style.display = 'none';
 }
@@ -66,12 +66,24 @@ form.addEventListener("submit", (e) => {
   ) {
   // Affichage dans la console:
   const envoi = {//regroupe les saisies en objet
-    nom : firstName.value,
-    prenom: lastName.value,
+    prenom : firstName.value,
+    nom: lastName.value,
     email: email.value,
     message: message.value
   } 
-  console.table(envoi); //affiche le résultat dans la console sous forme de tableau 
+  console.table(envoi); //affiche le résultat dans la console sous forme de tableau
+  contactName.style.fontSize= "45px"
+  messageValidation.style.fontSize= "80px";
+  messageValidation.innerHTML = `Merci ${firstName.value} <br> <p>Votre message a bien été envoyé !</p>`;
+  messageValidation.style.margin= "20% 8%";
+  messageValidation.style.color= "#901C1C";
+  messageValidation.style.textAlign= "center";
+  messageValidation.setAttribute("aria-hidden","false");
+  messageValidation.tabIndex= 0; 
+  form.parentNode.removeChild(form);
+  } else{
+    messageValidation.setAttribute("aria-hidden","true");
+    messageValidation.tabIndex= -1; 
   }
   // (pour la suite: envoi du formulaire : form.submit(); )
 });
@@ -97,10 +109,14 @@ const validFirstName = function (firstName) {
   //Affichage
   if (valid) {
     firstNameError.innerHTML = "";
+    firstNameError.setAttribute("aria-hidden", "true");
+    firstNameError.tabIndex = "-1";
     firstName.setAttribute("aria-invalid", "false");//accessibilite champ valide
     return true;
   } else {
     firstNameError.innerHTML = msg;
+    firstNameError.setAttribute("aria-hidden", "false");
+    firstNameError.tabIndex = "0";
     firstName.setAttribute("aria-invalid", "true");//accessibilite champ invalide
     return false;
   }
@@ -125,10 +141,14 @@ const validLastName = function (lastName) {
   //Affichage:
   if (valid) {
     lastNameError.innerHTML = "";
+    lastNameError.setAttribute("aria-hidden", "true");
+    lastNameError.tabIndex = "-1";
     lastName.setAttribute("aria-invalid", "false");//accessibilite champ valide
     return true;
   } else {
     lastNameError.innerHTML = msg;
+    lastNameError.setAttribute("aria-hidden", "false");
+    lastNameError.tabIndex = "0";
     lastName.setAttribute("aria-invalid", "true");//accessibilite champ invalide
     return false;
   }
@@ -149,11 +169,15 @@ const validEmail = function (email) {
     return false;
   }else if (!emailTest) {//Doit etre conforme a la RegExp
     emailError.innerHTML = "Veuillez renseigner une adresse e-mail valide";
+    emailError.setAttribute("aria-hidden", "false");
+    emailError.tabIndex = "0";
     emailError.classList.add("text-error");
     email.classList.add("text-control--error");
     return false;
   } else { //E-mail valide
     emailError.innerHTML = "";
+    emailError.setAttribute("aria-hidden", "true");
+    emailError.tabIndex = "-1";
     emailError.classList.remove("text-error");
     email.classList.remove("text-control--error");
     email.setAttribute("aria-invalid", "true");//accessibilite champ valide
@@ -179,10 +203,14 @@ const validMessage = function (message) {
   //Affichage:
   if (valid) {
     messageError.innerHTML = "";
+    messageError.setAttribute("aria-hidden", "true");
+    messageError.tabIndex = "-1";
     message.setAttribute("aria-invalid", "true");//accessibilite champ valide
     return true;
   } else {
     messageError.innerHTML = msg;
+    messageError.setAttribute("aria-hidden", "false");
+    messageError.tabIndex = "0";
     message.setAttribute("aria-invalid", "true");//accessibilite champ invalide
     return false;
   }

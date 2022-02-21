@@ -36,8 +36,15 @@ function init(){// avec lightbox.js :
     const links = Array.from(document.querySelectorAll('a[href$=".jpg"], a[href$=".mp4"]'))
     // console.log(links);
     const images = links.map(link => link.getAttribute('href'));
+    const titres = links.map(link => link.getAttribute('alt'));
+    console.log(titres)
+    // const {href, alt} = images;
+    // console.log(href, alt)
+    // console.log(images)
     links.forEach(link => link.addEventListener('click',e =>{ 
             e.preventDefault()
+            const title= e.currentTarget.getAttribute('alt')
+            console.log(title)
             new Lightbox(e.currentTarget.getAttribute('href'),images)
     }))
     
@@ -66,6 +73,7 @@ class Lightbox{
         this.images = images
         document.body.appendChild(this.element)
         document.addEventListener('keyup',this.onKeyUp)
+
     }
     
     /** 
@@ -77,6 +85,16 @@ class Lightbox{
         // const loader = document.createElement('div');
         // loader.classList.add('lightbox__loader')
         container.innerHTML = '';
+        const lightboxTitle = document.createElement('h2');
+        lightboxTitle.classList.add('lightbox__title');
+        lightboxTitle.innerHTML = url;
+        // const clean= ['assets/medias','.jpeg','.mp4']
+        // const regex = new RegExp("[a-z]+[\/\]+[a-z]+[\/\]+[0-9]+[\/\]", "g");
+        // const a = url.replaceAll(regex,"");
+        // const b = a.replaceAll("_"," ");
+        // console.log(b)
+        // lightboxTitle.innerHTML= url.replaceAll(regex,"");
+        container.appendChild(lightboxTitle);
         // container.appendChild(loader);
         if(url.includes(".mp4")){
             console.log("c'est un fichier mp4")
@@ -102,7 +120,7 @@ class Lightbox{
                 this.url = url
             // }
             image.src = url
-        }
+        } 
         
     }
      /**
@@ -152,8 +170,8 @@ class Lightbox{
     builDOM (url){
         const dom = document.getElementById('lightbox')
         dom.innerHTML = ` <img alt="bouton fermer" class="lightbox__btn__close" src="assets/icons/close--red.svg" onclick="closeLightbox()" tabindex="0" aria-roledescription="fermer" role="button"/>
-        <button alt="bouton suivant" class="lightbox__btn__next" tabindex="0" aria-roledescription="media suivant"></button>
-        <button alt="bouton précédent" class="lightbox__btn__prev" tabindex="0" aria-roledescription="media précédent"></button>
+        <button alt="bouton suivant" aria-describedby="aller à l'image suivante" class="lightbox__btn__next" tabindex="0" aria-roledescription="media suivant"></button>
+        <button alt="bouton précédent" aria-describedby="aller à l'image précédente" class="lightbox__btn__prev" tabindex="0" aria-roledescription="media précédent"></button>
         <div class="lightbox__container"></div>
         </div>
         `

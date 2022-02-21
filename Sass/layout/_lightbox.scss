@@ -15,6 +15,12 @@
         align-items: center;
         width: 100vw;
     }
+    &__title{
+        position: fixed;
+        bottom: 2vh;
+        left: 25vw;
+        color: $color-primary-1;
+    }
     &__loader{
         width: 180px;
         height: 180px;
@@ -23,7 +29,7 @@
         
     }
     &__image{
-        height: 100vh;
+        height: 80vh;
     }
     &__btn{
         &__close{

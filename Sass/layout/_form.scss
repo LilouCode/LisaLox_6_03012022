@@ -10,6 +10,9 @@
     -webkit-animation: slide-in-blurred-top 0.05s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     animation: slide-in-blurred-top 0.05s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
+.no-scroll{
+    overflow: hidden;
+}
 .modal{
     background-color: $color-secondary-1;
     border-radius: 5px;

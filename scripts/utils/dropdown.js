@@ -4,6 +4,7 @@ boutonDropdown.innerHTML = "selectionner";
 const dropContent = document.getElementById('selection');
 const boutonTitre = document.getElementById('titreBtn');
 const boutonPopulaire = document.getElementById('popBtn');
+const boutonDate = document.getElementById('dateBtn');
 
 
 function dropdownOpenClose() {
@@ -28,19 +29,23 @@ function trierParPopularite(a,b){
   return b.likes -a.likes;
 }
 
-
-let flag= false;
-
-
-function choisirTri(element){
-  if(flag){
-    element.sort(trierParTitre);
-    console.table(element);
-  } else if (!flag) {
-    element.sort(trierParPopularite);
-    console.table(element);
-  }
+function trierParDate (a,b){
+  return new Date (a.date.valueOf()) - new Date (b.date.valueOf());
 }
+
+
+// let flag= false;
+
+
+// function choisirTri(element){
+//   if(flag){
+//     element.sort(trierParTitre);
+//     console.table(element);
+//   } else if (!flag) {
+//     element.sort(trierParPopularite);
+//     console.table(element);
+//   }
+// }
 
 
 //ECOUTES
@@ -55,15 +60,19 @@ boutonTitre.addEventListener('click', function(){
   boutonDropdown.innerHTML = "Titre";
   this.style.display = "none";
   boutonPopulaire.style.display = "block";
-  flag = true;
-  console.log(flag)
+  boutonDate.style.display = "block";
 })
 
 boutonPopulaire.addEventListener('click', function (){
   boutonDropdown.innerHTML= "Popularité";
   this.style.display = "none";
   boutonTitre.style.display= "block";
-  flag= false;
-  console.log(flag)
+  boutonDate.style.display = "block";
 })
 
+boutonDate.addEventListener('click', function (){
+  boutonDropdown.innerHTML= "Date";
+  this.style.display = "none";
+  boutonTitre.style.display= "block";
+  boutonPopulaire.style.display = "block";
+})
