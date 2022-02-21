@@ -16,7 +16,7 @@ function photographerFactory(data) {
         const a = document.createElement('a');
         a.href += '/photographer.html?id=' + id;
         a.classList.add("thumb_link")
-        a.tabIndex= -1;
+        a.tabIndex= 0;
     // Image
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);

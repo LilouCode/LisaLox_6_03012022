@@ -15,6 +15,14 @@ function displayLightbox () {
     mainWrapper.setAttribute('aria-hidden', 'true');
     modal.setAttribute('aria-hidden','false');
 }
+window.addEventListener("keydown",function (event){
+    if(event.target.matches('.aMedia')){
+        if(event.key === "Enter"){
+            displayLightbox();
+        }
+    }
+})
+
 
 function closeLightbox(){
     lightbox.style.display = 'none';

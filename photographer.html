@@ -32,7 +32,7 @@
   <body id="body">
 
     <header role="banner">
-      <a href="index.html" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="-1">
+      <a href="index.html" class="goHomePage" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="-1">
         <img src="./assets/images/logo.png" class="logo" alt="Fisheye Home page" tabindex="0"/>
       </a>
     </header>
@@ -45,12 +45,12 @@
         <div id="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()" id="contactButton" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
-        <div id="CTA" tabindex="0">
+        <section id="CTA" tabindex="0">
           <div id="CTA_likes" >
              <img id="CTA_heart" src="assets/icons/like_heart--black.svg" alt="coeur" aria-hidden="true">
           </div>
             <p id="CTA_price"></p>
-        </div>
+        </section>
       </section>
 
 
@@ -61,7 +61,8 @@
           <label for="filter"  class="dropdown__label">Trier par </label>
           
           <div class="dropdown">
-            <button id="dropdownButton" class="dropdown__btn" onclick="dropdownOpenClose()"></button>
+            <p class="sr-only" tabindex="0">Vous pouvez trier les medias par titre, date ou popularité ici</p>
+            <button id="dropdownButton" class="dropdown__btn" aria-label="Bouton de tri des medias" onclick="dropdownOpenClose()"></button>
             <div id="selection" class="dropdown__content">
               <button id="titreBtn">Titre</button>
               <button id="popBtn">Popularité</button>

@@ -1,3 +1,12 @@
+//Retour à la page d'acceuil
+// window.addEventListener("keydown",function (event){
+//   if(event.target.matches('.goHomePage')){
+//       if(event.key === "Enter"){
+          
+//       }
+//   }
+// })
+
 ////////////////////////// Photographer Profil //////////////////////////
 
 (async function () {
@@ -38,7 +47,7 @@ async function getPhotographerData(photographerId){
         console.log(templateImage);
         //CTA
         let ctaPrice = document.getElementById('CTA_price');
-        ctaPrice.innerHTML= `${data.price}`;
+        ctaPrice.innerHTML= `<span class="sr-only">Tarif journalier:</span> ${data.price}<span aria-hidden= true>/jour</span>`;
         //modal name
         contactName= document.getElementById('modal_title');
         contactName.innerHTML += `<br>${data.name}`;
@@ -122,17 +131,22 @@ async function getMediaData(photographerId, tri){
 
           ///////// Bouton like ou dislike //////////
           const buttonLike = document.getElementById('button_'+(data.title)); 
+          let i = document.getElementById('like_'+(data.title)).innerHTML
+          buttonLike.ariaLabel= i +"likes pour"+ data.title +"Cliquer ici si vous souhaiter ajouter un like à ce média"
           buttonLike.addEventListener('click', function() {
-            let i = document.getElementById('like_'+(data.title)).innerHTML;
+            ;
             if (i == data.likes){
               i++;
               sum ++;
+              buttonLike.ariaLabel= "Vous avez liker ce média. Mise à jour du nombre de like:"+i+"likes pour"+ data.title;
             } else{
               i--;
               sum--;
+              buttonLike.ariaLabel= "Vous avez disliker ce média. Mise à jour du nombre de like:"+i+"likes pour"+ data.title;
             }
-            wrapperNumber.innerHTML= sum;
+            wrapperNumber.innerHTML= `${sum} <span class= "sr-only">likes pour l'ensemble des medias</span>`;
             document.getElementById('like_'+(data.title)).innerHTML= i;
+            
           });
        
         }
@@ -146,10 +160,13 @@ async function getMediaData(photographerId, tri){
     let wrapperNumber = document.createElement('p');
     wrapperNumber.classList.add('CTA_total-like');
     console.log(sum);
-    wrapperNumber.innerHTML= sum;
+    wrapperNumber.innerHTML= `${sum} <span class= "sr-only">likes pour l'ensemble des medias</span>`;
     wrapperLikes = document.getElementById('CTA_likes');
     wrapperLikes.appendChild(wrapperNumber);
-    
+    window.addEventListener('loadstart', function(e){
+      e.preventDefault()
+      test= getMediaData(photographerId, "titre");
+    })
     boutonTitre.addEventListener('click', function(e){
       e.preventDefault()
       wrapperNumber.parentNode.removeChild(wrapperNumber);

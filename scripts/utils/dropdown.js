@@ -1,8 +1,9 @@
 //DOM
 const boutonDropdown = document.getElementById('dropdownButton');
-boutonDropdown.innerHTML = "selectionner";
+boutonDropdown.innerHTML = "Titre";
 const dropContent = document.getElementById('selection');
 const boutonTitre = document.getElementById('titreBtn');
+boutonTitre.style.display= "none";
 const boutonPopulaire = document.getElementById('popBtn');
 const boutonDate = document.getElementById('dateBtn');
 
@@ -16,6 +17,7 @@ function closeDropdown(){
   dropContent.classList.remove("show");
   boutonDropdown.classList.remove("dropdown__btn--open");
 }
+
 
 
 function trierParTitre (a,b) {
@@ -32,21 +34,6 @@ function trierParPopularite(a,b){
 function trierParDate (a,b){
   return new Date (a.date.valueOf()) - new Date (b.date.valueOf());
 }
-
-
-// let flag= false;
-
-
-// function choisirTri(element){
-//   if(flag){
-//     element.sort(trierParTitre);
-//     console.table(element);
-//   } else if (!flag) {
-//     element.sort(trierParPopularite);
-//     console.table(element);
-//   }
-// }
-
 
 //ECOUTES
 
