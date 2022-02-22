@@ -88,6 +88,8 @@ async function getMediaData(photographerId, tri){
     objet.media.sort(trierParPopularite);
    } else if (tri === "date"){
      objet.media.sort(trierParDate);
+   } else {
+     objet.media.sort(trierParTitre);
    }
     console.table(objet.media)//tableau plein pour tri
 

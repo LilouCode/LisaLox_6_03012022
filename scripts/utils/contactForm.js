@@ -20,9 +20,8 @@ function displayModal() {
   const modal = document.getElementById('contact_modal');
   modal.style.display = 'flex';
   // bodyW.classList.add('no-scroll');
-  mainWrap.setAttribute('aria-hidden', 'true');
-  mainWrap.tabIndex= "-1";
-  modal.setAttribute('aria-hidden','false');
+  const hid= document.getElementById('photographer_image');
+  hid.ariaHidden= true;
 }
 // document.getElementById('contactButton').addEventListener("click", displayModal());
 //close modal event

@@ -90,54 +90,41 @@ class Lightbox{
     loadImage (url){
         this.url = null
         const container = this.element.querySelector('.lightbox__container');
-        // const loader = document.createElement('div');
-        // loader.classList.add('lightbox__loader')
         container.innerHTML = '';
         const lightboxTitle = document.createElement('h2');
         lightboxTitle.classList.add('lightbox__title');
         lightboxTitle.innerHTML = url;
-        // const clean= ['assets/medias','.jpeg','.mp4']
-        // const regex = new RegExp("[a-z]+[\/\]+[a-z]+[\/\]+[0-9]+[\/\]", "g");
-        // const a = url.replaceAll(regex,"");
-        // const b = a.replaceAll("_"," ");
-        // console.log(b)
-        // lightboxTitle.innerHTML= url.replaceAll(regex,"");
         container.appendChild(lightboxTitle);
-        // container.appendChild(loader);
         if(url.includes(".mp4")){
-            console.log("c'est un fichier mp4")
             const image = document.createElement('video');
+            
             image.setAttribute("type","video/mp4");
             image.classList.add('lightbox__video');
-            // image.onload = () => {
-                // container.removeChild(loader)
-                container.appendChild(image)
-                this.url = url
-            // }
+            container.appendChild(image)
+            this.url = url
             image.src = url
+
             image.width= "900"
             image.autoplay = true;
             image.loop = true;
             image.controls= true;
         }else{
             const image = document.createElement('img');
+
             image.classList.add('lightbox__image');
-            // image.onload = () => {
-                // container.removeChild(loader)
-                container.appendChild(image)
-                this.url = url
-            // }
+            container.appendChild(image)
+            this.url = url
             image.src = url
         } 
-        
     }
+
      /**
      * 
      * @param {KeyboardEvent} e
      *  
      */
     
-      onKeyUp (e){
+    onKeyUp (e){
         if(e.key === 'ArrowLeft'){
             this.prevMedia(e)
         } else if (e.key === 'ArrowRight'){

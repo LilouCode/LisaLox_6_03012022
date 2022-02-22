@@ -12,7 +12,8 @@
         flex-direction: column;
         justify-content: center;
         text-decoration: none;
-        align-items: center;   
+        align-items: center;
+        padding: 0% 8%;  
     }
     &_name{
         color: $color-primary-2;
@@ -21,6 +22,12 @@
     }
     &_img{
         @include imageUser;
+    }
+    &_details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 8%;
     }
     &_city{
         margin:0;

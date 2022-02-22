@@ -10,7 +10,6 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         article.classList.add("thumb");
         article.ariaLabel = "Allez sur la page de " +name
-        article.tabIndex= 0;
     
     //Lien
         const a = document.createElement('a');
@@ -29,6 +28,11 @@ function photographerFactory(data) {
         h2.textContent = name;
         h2.classList.add("thumb_name");
     
+    //Section détails photographe
+        const sectionDetails = document.createElement("section");
+        sectionDetails.classList.add('thumb_details');
+        sectionDetails.tabIndex = 0;
+
     // Ville et pays
         const h3 = document.createElement( 'h3' );
         h3.textContent = city + " "+ country;
@@ -48,9 +52,10 @@ function photographerFactory(data) {
         article.appendChild(a);
         a.appendChild(img);
         a.appendChild(h2);
-        article.appendChild(h3);
-        article.appendChild(h4);
-        article.appendChild(p);
+        sectionDetails.appendChild(h3);
+        sectionDetails.appendChild(h4);
+        sectionDetails.appendChild(p);
+        article.appendChild(sectionDetails);
         return (article);
     }
     return { name, picture, city, tagline, price, description, id, getUserCardDOM }

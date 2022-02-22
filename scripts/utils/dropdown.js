@@ -32,7 +32,7 @@ function trierParPopularite(a,b){
 }
 
 function trierParDate (a,b){
-  return new Date (a.date.valueOf()) - new Date (b.date.valueOf());
+  return new Date (b.date.valueOf()) - new Date (a.date.valueOf());
 }
 
 //ECOUTES
