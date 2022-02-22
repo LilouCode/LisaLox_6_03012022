@@ -1,4 +1,4 @@
-export class infosUser {
+class infosUser {
   constructor(data) {
     this._name = data.name;
     this._city = data.city;
