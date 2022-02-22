@@ -1,127 +1,299 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <title>Fisheye - photographe</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="./assets/Fisheye-favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link
+      href="./css/style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/Fisheye-favicon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
     <!-- templates -->
-    <script src="./scripts/templates/PhotographerProfil.js" defer></script>
-    <script src="./scripts/templates/PhotographerProfileImage.js" defer></script>
-    <script src="./scripts/templates/ThumbMedia.js" defer></script>
-    <script src="./scripts/templates/ThumbMediaDetails.js" defer></script>
+    <script
+      src="./scripts/templates/PhotographerProfil.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/templates/PhotographerProfileImage.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/templates/ThumbMedia.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/templates/ThumbMediaDetails.js"
+      defer
+    ></script>
     <!-- models -->
-    <script src="./scripts/models/infosUser.js" defer></script>
-    <script src="./scripts/models/infosMedia.js" defer></script>
-     
+    <script
+      src="./scripts/models/infosUser.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/models/infosMedia.js"
+      defer
+    ></script>
+
     <!-- factory -->
-    <script src="./scripts/factories/mediaFactory.js" defer></script>
-    <script src="./scripts/factories/photographerFact.js" defer></script>
+    <script
+      src="./scripts/factories/mediaFactory.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/factories/photographerFact.js"
+      defer
+    ></script>
 
     <!-- utils -->
-    <script src="./scripts/utils/dropdown.js" defer></script> 
-    <script src="./scripts/utils/lightbox.js" defer></script>
-    <script src="./scripts/utils/contactForm.js" defer></script>
-   
+    <script
+      src="./scripts/utils/dropdown.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/utils/lightbox.js"
+      defer
+    ></script>
+    <script
+      src="./scripts/utils/contactForm.js"
+      defer
+    ></script>
+
     <!-- page -->
-    <script src="./scripts/pages/photographer.js" defer></script>
-   
+    <script
+      src="./scripts/pages/photographer.js"
+      defer
+    ></script>
   </head>
   <body id="body">
-
     <header role="banner">
-      <a href="index.html" class="goHomePage focus" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="0">
-        <img src="./assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+      <a
+        href="index.html"
+        class="goHomePage focus"
+        role="button"
+        alt="Lien vers la page d'acceuil"
+        aria-roledescription="Retour à la Home page"
+        id="logo"
+        tabindex="0"
+      >
+        <img
+          src="./assets/images/logo.png"
+          class="logo"
+          alt="Fisheye Home page"
+        />
       </a>
     </header>
-    
+
     <main id="main" role="main">
-     
-     
       <!-- header profile photographe -->
-      <section id="photograph-header" >
+      <section id="photograph-header">
         <div id="photographer-profile"></div>
-        <button class="contact_button" onclick="displayModal()" id="contactButton" data-keyboard="true">Contactez-moi</button>
+        <button
+          class="contact_button"
+          onclick="displayModal()"
+          id="contactButton"
+          data-keyboard="true"
+        >
+          Contactez-moi
+        </button>
         <div id="photographer_image"></div>
         <section id="CTA" class="focus" tabindex="0">
-          <div id="CTA_likes" >
-             <img id="CTA_heart" src="assets/icons/like_heart--black.svg" alt="coeur" aria-hidden="true">
+          <div id="CTA_likes">
+            <img
+              id="CTA_heart"
+              src="assets/icons/like_heart--black.svg"
+              alt="coeur"
+              aria-hidden="true"
+            />
           </div>
-            <p id="CTA_price"></p>
+          <p id="CTA_price"></p>
         </section>
       </section>
 
-
       <!-- grid media -->
-      <section id="media-grid">    
-
+      <section id="media-grid">
         <div id="filter">
-          <label for="filter"  class="dropdown__label">Trier par </label>
-          
+          <label for="filter" class="dropdown__label"
+            >Trier par
+          </label>
+
           <div class="dropdown">
-            <p id="infoTri" class="sr-only focus" tabindex="0"></p>
-            <button id="dropdownButton" class="dropdown__btn" aria-label="Bouton de tri des medias" aria-roledescription="changer le tri des médias" onclick="dropdownOpenClose()"></button>
+            <p
+              id="infoTri"
+              class="sr-only focus"
+              tabindex="0"
+            ></p>
+            <button
+              id="dropdownButton"
+              class="dropdown__btn"
+              aria-label="Bouton de tri des medias"
+              aria-roledescription="changer le tri des médias"
+              onclick="dropdownOpenClose()"
+            ></button>
             <div id="selection" class="dropdown__content">
               <button id="titreBtn">Titre</button>
               <button id="popBtn">Popularité</button>
               <button id="dateBtn">Date</button>
             </div>
           </div>
-        
         </div>
         <div id="grid"></div>
       </section>
-
     </main>
 
     <!-- ********* ********* Modals ********* ********* -->
-    
+
     <!-- modal formulaire de contact -->
-    <section id="contact_modal"  aria-modal="true" class="modal" role="dialog">
-			<div class="modal" tabindex="0" role="dialog">
-				
+    <section
+      id="contact_modal"
+      aria-modal="true"
+      class="modal"
+      role="dialog"
+    >
+      <div class="modal" tabindex="0" role="dialog">
         <header class="modal_header">
-          <h2 id="modal_title" class="modal_title" tabindex="0">Contactez-moi</h2>
-          <img alt="bouton fermer" src="assets/icons/close.svg" onclick="closeModal()" tabindex="0" aria-roledescription="fermer" role="button"/>
+          <h2
+            id="modal_title"
+            class="modal_title"
+            tabindex="0"
+          >
+            Contactez-moi
+          </h2>
+          <img
+            alt="bouton fermer"
+            src="assets/icons/close.svg"
+            onclick="closeModal()"
+            tabindex="0"
+            aria-roledescription="fermer"
+            role="button"
+          />
         </header>
-				
-        <form class="contact_form modal_form" name="contact_photographer" id="form" action="photographer.html" method="get"> 
-					<div role="group">
+
+        <form
+          class="contact_form modal_form"
+          name="contact_photographer"
+          id="form"
+          action="photographer.html"
+          method="get"
+        >
+          <div role="group">
             <div class="formData">
-              <label for="firstName" class="modal_form_label" tabindex="0" >Prénom</label>
-              <input class="modal_form_input" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
-              <span id="first-name_error" class="input-error" aria-hidden="true"></span>
+              <label
+                for="firstName"
+                class="modal_form_label"
+                tabindex="0"
+                >Prénom</label
+              >
+              <input
+                class="modal_form_input"
+                type="text"
+                id="firstName"
+                name="first"
+                aria-placeholder="Veuillez renseignez votre prénom ici"
+              />
+              <span
+                id="first-name_error"
+                class="input-error"
+                aria-hidden="true"
+              ></span>
             </div>
-  
+
             <div class="formData">
-              <label for="lastName" class="modal_form_label" tabindex="0">Nom</label>
-              <input class="modal_form_input" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
-              <span id="last-name_error" class="input-error" aria-hidden="true"></span>
+              <label
+                for="lastName"
+                class="modal_form_label"
+                tabindex="0"
+                >Nom</label
+              >
+              <input
+                class="modal_form_input"
+                type="text"
+                id="lastName"
+                aria-placeholder="Veuillez renseignez votre nom ici"
+                name="last"
+              />
+              <span
+                id="last-name_error"
+                class="input-error"
+                aria-hidden="true"
+              ></span>
             </div>
-            
+
             <div class="formData">
-              <label for="email" class="modal_form_label" tabindex="0">Email</label>
-              <input required  type="email" id="email" aria-placeholder="Veuillez renseignez votre email ici" name="email">
-              <span id="email_error" class="input-error" aria-hidden="true"></span>
+              <label
+                for="email"
+                class="modal_form_label"
+                tabindex="0"
+                >Email</label
+              >
+              <input
+                required
+                type="email"
+                id="email"
+                aria-placeholder="Veuillez renseignez votre email ici"
+                name="email"
+              />
+              <span
+                id="email_error"
+                class="input-error"
+                aria-hidden="true"
+              ></span>
             </div>
           </div>
 
           <div class="formData">
-            <label for="message" class="modal_form_label" tabindex="0">Votre message</label>
-            <textarea required type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message"> </textarea>
-            <span id="message_error" class="input-error" aria-hidden="true"></span>
-					</div>
-          <button class="contact_button contact_button--sent" type="submit">Envoyer</button>
-        </form>      
-        <span id="message_validation" class="message-validation" aria-hidden="true"></span>      
-			</div>
+            <label
+              for="message"
+              class="modal_form_label"
+              tabindex="0"
+              >Votre message</label
+            >
+            <textarea
+              required
+              type="text"
+              class="modal_form_input modal_form_input--long"
+              aria-placeholder="écrivez votre message ici"
+              name="message"
+              id="message"
+            >
+            </textarea>
+            <span
+              id="message_error"
+              class="input-error"
+              aria-hidden="true"
+            ></span>
+          </div>
+          <button
+            class="contact_button contact_button--sent"
+            type="submit"
+          >
+            Envoyer
+          </button>
+        </form>
+        <span
+          id="message_validation"
+          class="message-validation"
+          aria-hidden="true"
+        ></span>
+      </div>
     </section>
 
     <!-- lightbox -->
-    <section id="lightbox" class= "lightbox" aria-modal="true"  role="dialog">
-    </section>
-
+    <section
+      id="lightbox"
+      class="lightbox"
+      aria-modal="true"
+      role="dialog"
+    ></section>
   </body>
 </html>

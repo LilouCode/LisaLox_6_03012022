@@ -1,20 +1,20 @@
-class PhotographerProfileCard{
-    constructor(infosUser){
-        this._infosUser = infosUser;
-    }
+class PhotographerProfileCard {
+  constructor(infosUser) {
+    this._infosUser = infosUser;
+  }
 
-    createPhotographerProfileCard(){
-        const wrapper = document.createElement('div')
-        wrapper.classList.add('profile')
-        //ajouter class
+  createPhotographerProfileCard() {
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("profile");
+    //ajouter class
 
-        const photographerProfileCard = `
-        <h1 class='profile_header' tabindex=0>${this._infosUser.name}</h1>
-        <div tabIndex=0><h2 class= 'profile_subtitle'>${this._infosUser.localisation}</h2>
+    const photographerProfileCard = `
+        <h1 class='profile_header focus' tabindex=0>${this._infosUser.name}</h1>
+        <div tabIndex=0><h2 class= 'profile_subtitle focus'>${this._infosUser.localisation}</h2>
         <p>${this._infosUser.tagline}</p></div>
-        `
-        wrapper.innerHTML= photographerProfileCard
+        `;
+    wrapper.innerHTML = photographerProfileCard;
 
-        return wrapper
-    }
+    return wrapper;
+  }
 }
