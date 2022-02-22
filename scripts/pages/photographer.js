@@ -37,7 +37,7 @@ async function getPhotographerData(photographerId) {
 
     .then(function (objet) {
       objet.photographers.forEach((photographers) => {
-        if (photographerId == photographers.id) {
+        if (photographerId === photographers.id) {
           //creation du profil
           let wrapperProfil = document.getElementById(
             "photographer-profile"
@@ -128,7 +128,7 @@ async function getMediaData(photographerId, tri) {
       objet.media.forEach((media) => {
         //boucle pour chaque media...
 
-        if (photographerId == media.photographerId) {
+        if (photographerId === media.photographerId) {
           //...qui corresponde au photographe:
 
           function creatMediaGrid() {
@@ -178,7 +178,7 @@ async function getMediaData(photographerId, tri) {
             buttonLike.addEventListener(
               "click",
               function () {
-                if (i == data.likes) {
+                if (i === data.likes) {
                   i++;
                   sum++;
                   buttonLike.ariaLabel =

@@ -27,7 +27,7 @@ function closeLightbox() {
   modal.setAttribute("aria-hidden", "true");
 }
 window.addEventListener("keydown", function (event) {
-  if (lightbox.style.display == "flex") {
+  if (lightbox.style.display === "flex") {
     if (event.key === "Escape") {
       closeLightbox();
     }
