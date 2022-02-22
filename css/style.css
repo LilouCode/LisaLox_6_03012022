@@ -491,6 +491,16 @@ form input {
   border-radius: 5px;
 }
 
+.validForm {
+  margin: 20% 8%;
+  text-align: center;
+  font-size: 80px;
+}
+.validForm p {
+  font-size: 40px;
+  margin: 0;
+}
+
 .lightbox {
   display: none;
   background-color: white;
@@ -523,6 +533,7 @@ form input {
 }
 .lightbox__image {
   height: 80vh;
+  box-shadow: 5px 1px 7px #555;
 }
 .lightbox__btn__close {
   z-index: 1000;

@@ -32,7 +32,7 @@
   <body id="body">
 
     <header role="banner">
-      <a href="index.html" class="goHomePage" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="0">
+      <a href="index.html" class="goHomePage focus" role="button" alt="Lien vers la page d'acceuil" aria-roledescription="Retour à la Home page" id="logo" tabindex="0">
         <img src="./assets/images/logo.png" class="logo" alt="Fisheye Home page" />
       </a>
     </header>
@@ -41,11 +41,11 @@
      
      
       <!-- header profile photographe -->
-      <section id="photograph-header">
+      <section id="photograph-header" >
         <div id="photographer-profile"></div>
         <button class="contact_button" onclick="displayModal()" id="contactButton" data-keyboard="true">Contactez-moi</button>
         <div id="photographer_image"></div>
-        <section id="CTA" tabindex="0">
+        <section id="CTA" class="focus" tabindex="0">
           <div id="CTA_likes" >
              <img id="CTA_heart" src="assets/icons/like_heart--black.svg" alt="coeur" aria-hidden="true">
           </div>
@@ -61,8 +61,8 @@
           <label for="filter"  class="dropdown__label">Trier par </label>
           
           <div class="dropdown">
-            <p class="sr-only" tabindex="0">Vous pouvez trier les medias par titre, date ou popularité ici</p>
-            <button id="dropdownButton" class="dropdown__btn" aria-label="Bouton de tri des medias" onclick="dropdownOpenClose()"></button>
+            <p id="infoTri" class="sr-only focus" tabindex="0"></p>
+            <button id="dropdownButton" class="dropdown__btn" aria-label="Bouton de tri des medias" aria-roledescription="changer le tri des médias" onclick="dropdownOpenClose()"></button>
             <div id="selection" class="dropdown__content">
               <button id="titreBtn">Titre</button>
               <button id="popBtn">Popularité</button>
@@ -91,25 +91,25 @@
 					<div role="group">
             <div class="formData">
               <label for="firstName" class="modal_form_label" tabindex="0" >Prénom</label>
-              <input required minlength="2" class="modal_form_input" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
+              <input class="modal_form_input" type="text" id="firstName" name="first" aria-placeholder="Veuillez renseignez votre prénom ici"/>
               <span id="first-name_error" class="input-error" aria-hidden="true"></span>
             </div>
   
             <div class="formData">
               <label for="lastName" class="modal_form_label" tabindex="0">Nom</label>
-              <input required minlength="2" class="modal_form_input" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
+              <input class="modal_form_input" type="text" id="lastName" aria-placeholder="Veuillez renseignez votre nom ici" name="last">
               <span id="last-name_error" class="input-error" aria-hidden="true"></span>
             </div>
             
-            <div class="formData" aria-hidden="true">
-              <label for="email" tabindex="0">Email</label>
-              <input required type="email" id="email" aria-placeholder="Veuillez renseignez votre email ici" name="email">
+            <div class="formData">
+              <label for="email" class="modal_form_label" tabindex="0">Email</label>
+              <input required  type="email" id="email" aria-placeholder="Veuillez renseignez votre email ici" name="email">
               <span id="email_error" class="input-error" aria-hidden="true"></span>
             </div>
           </div>
 
-          <div class="formData" aria-hidden="true">
-            <label for="message" tabindex="0">Votre message</label>
+          <div class="formData">
+            <label for="message" class="modal_form_label" tabindex="0">Votre message</label>
             <textarea required type="text" class= "modal_form_input modal_form_input--long" aria-placeholder="écrivez votre message ici" name="message" id="message"> </textarea>
             <span id="message_error" class="input-error" aria-hidden="true"></span>
 					</div>
