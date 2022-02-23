@@ -72,12 +72,12 @@
     ></script>
   </head>
   <body id="body">
-    <header role="banner">
+    <header>
       <a
         href="index.html"
         class="goHomePage focus"
         role="button"
-        alt="Lien vers la page d'acceuil"
+        aria-label="Lien vers la page d'acceuil"
         aria-roledescription="Retour à la Home page"
         id="logo"
         tabindex="0"
@@ -86,6 +86,7 @@
           src="./assets/images/logo.png"
           class="logo"
           alt="Fisheye Home page"
+          aria-hidden="true"
         />
       </a>
     </header>
@@ -119,11 +120,11 @@
       <!-- grid media -->
       <section id="media-grid">
         <div id="filter">
-          <label for="filter" class="dropdown__label"
+          <label for="choice" class="dropdown__label"
             >Trier par
           </label>
 
-          <div class="dropdown">
+          <div id="choice" class="dropdown">
             <p
               id="infoTri"
               class="sr-only focus"
@@ -155,7 +156,6 @@
       aria-modal="true"
       class="modal"
       role="dialog"
-      autofocus
     >
       <div class="modal" tabindex="0" role="dialog">
         <header class="modal_header">
@@ -256,8 +256,6 @@
               >Votre message</label
             >
             <textarea
-              required
-              type="text"
               class="modal_form_input modal_form_input--long"
               aria-placeholder="écrivez votre message ici"
               name="message"
