@@ -12,9 +12,7 @@
     "extends": [
       "eslint:recommended"
     ],
-    "rules": {
-      "eqeqeq": "warn",
-      "indent": ["warn", 2, { "SwitchCase": 1 }],
-      "multiline-ternary": ["warn", "always-multiline"]
-    }
+    "rules": { "indent": ["warn", 2, { "SwitchCase": 1 }], "multiline-ternary": ["warn", "always-multiline"], "no-unused-vars": "off", "no-undef": "off", "no-inner-declarations": "off" }
+
+
   }

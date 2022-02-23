@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.html",
     "scripts": {
-        "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded",
-        "sass-compress": "sass --watch ./sass/main.scss:./css/style.css --style compressed",
+        "sass": "sass --watch ./scss/main.scss:./css/style.css --style expanded",
+        "sass-compress": "sass --watch ./scss/main.scss:./css/style.css --style compressed",
         "lint": "eslint --max-warnings=0 ."
     },
     "repository": {
