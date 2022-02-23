@@ -20,7 +20,7 @@ function photographerFactory(data) {
 
     //Lien
     const a = document.createElement("a");
-    a.href += "/photographer.html?id=" + id;
+    a.href += "./photographer.html?id=" + id;
     a.classList.add("thumb_link");
     a.tabIndex = 0;
     // Image
