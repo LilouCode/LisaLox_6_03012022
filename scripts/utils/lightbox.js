@@ -130,18 +130,26 @@ class Lightbox {
     url = this.url;
     tableau = this.tableau;
     console.log("Url de l'image en cours: "+url);
-    function test(){
-      // tableau.images.forEach(images => console.log(images))
-      let indexI = tableau.images.forEach(images => {if(images.includes(url)){console.log(tableau.images.indexOf(images))} })
-      return indexI
-    }
-    test()
+    let indexI;
+    tableau.images.forEach(images => {
+      if(images.includes(url)){
+        indexI = tableau.images.indexOf(images);
+        console.log(tableau.images.indexOf(images))
+      } 
+    });
+    // function test(a){
+    // tableau.images.forEach(images => console.log(images))
+    // a = tableau.images.forEach(images => {if(images.includes(url)){console.log(tableau.images.indexOf(images))} })
+    // return indexI
+    // }
+    // test(indexI)
+    console.log(indexI)
     console.table("une url avec index: "+tableau.images[2]);
     const container = this.element.querySelector(".lightbox__container");
     console.log(tableau); 
     const lightboxTitle = document.createElement("h2");
     lightboxTitle.classList.add("lightbox__title");
-    lightboxTitle.innerHTML = tableau.titres;
+    lightboxTitle.innerHTML = tableau.titres[indexI];
     container.appendChild(lightboxTitle);
   }
 
