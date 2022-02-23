@@ -1,40 +1,34 @@
 ///////////////////////////DOM elements///////////////////////////
-const bodyW = document.getElementById("body");
-const mainWrap = document.getElementById("main");
+// const bodyW = document.getElementById("body");
+// const mainWrap = document.getElementById("main");
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
-let firstNameError = document.getElementById(
-  "first-name_error"
-);
-let lastNameError = document.getElementById(
-  "last-name_error"
-);
+let firstNameError = document.getElementById("first-name_error");
+let lastNameError = document.getElementById("last-name_error");
 let emailError = document.getElementById("email_error");
 let messageError = document.getElementById("message_error");
 const form = document.getElementById("form");
-let messageValidation = document.getElementById(
-  "message_validation"
-);
+let messageValidation = document.getElementById("message_validation");
 const modal = document.getElementById("contact_modal");
-const contactButton =
-  document.getElementById("contactButton");
+// const contactButton = document.getElementById("contactButton");
 const focusElements = document.querySelectorAll(".focus");
 ///////////////////////////launch and close modal///////////////////////////
 //lauch modal event
 
 function displayModal() {
-  const modal = document.getElementById("contact_modal");
+  // const modal = document.getElementById("contact_modal");
   modal.style.display = "flex";
   // bodyW.classList.add('no-scroll');
+  modal.focus();
   focusElements.tabIndex = -1;
 }
 // document.getElementById('contactButton').addEventListener("click", displayModal());
 //close modal event
 function closeModal() {
   // bodyW.classList.remove('no-scroll');
-  const modal = document.getElementById("contact_modal");
+  // const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
   focusElements.tabIndex = 0;
 }
@@ -82,7 +76,7 @@ form.addEventListener("submit", (e) => {
       message: message.value,
     };
     console.table(envoi); //affiche le résultat dans la console sous forme de tableau
-    contactName.style.fontSize = "45px";
+    contactName.style.display="none";
     messageValidation.innerHTML = `Merci ${firstName.value} <br> <p>Votre message a bien été envoyé !</p>`;
     messageValidation.classList.add("validForm");
     messageValidation.setAttribute("aria-hidden", "false");
@@ -214,6 +208,7 @@ const validEmail = function (email) {
     emailError.innerHTML = "";
     emailError.setAttribute("aria-hidden", "true");
     emailError.classList.remove("text-error");
+    emailError.tabIndex = "-1";
     email.classList.remove("text-control--error");
     email.setAttribute("aria-invalid", "false"); //accessibilite champ valide
     return true;
