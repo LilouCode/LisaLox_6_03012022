@@ -464,33 +464,6 @@ h1:focus-visible {
   color: #901C1C;
 }
 
-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form label {
-  color: #312E2E;
-  font-size: 36px;
-}
-
-form div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
-}
-
-form input {
-  width: 100%;
-  height: 68px;
-  border: none;
-  border-radius: 5px;
-}
-
 .validForm {
   margin: 20% 8%;
   text-align: center;
@@ -525,12 +498,6 @@ form input {
   left: 25vw;
   color: #901C1C;
 }
-.lightbox__loader {
-  width: 180px;
-  height: 180px;
-  opacity: 0.5;
-  background: url(/assets/icons/loader.svg) no-repeat;
-}
 .lightbox__image {
   height: 80vh;
   box-shadow: 5px 1px 7px #555;
@@ -552,7 +519,7 @@ form input {
   top: 50%;
   right: 4%;
   cursor: pointer;
-  background: no-repeat url(/assets/icons/arrow-next.svg);
+  background: no-repeat url(../assets/icons/arrow-next.svg);
 }
 .lightbox__btn__prev {
   z-index: 1000;
@@ -563,7 +530,7 @@ form input {
   top: 50%;
   left: 4%;
   cursor: pointer;
-  background: no-repeat url(/assets/icons/arrow-prev.svg);
+  background: no-repeat url(../assets/icons/arrow-prev.svg);
 }
 
 /*# sourceMappingURL=style.css.map */

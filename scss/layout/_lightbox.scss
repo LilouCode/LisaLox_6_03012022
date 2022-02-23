@@ -21,13 +21,6 @@
         left: 25vw;
         color: $color-primary-1;
     }
-    &__loader{
-        width: 180px;
-        height: 180px;
-        opacity: 0.5;
-        background: url(/assets/icons/loader.svg) no-repeat;
-        
-    }
     &__image{
         height: 80vh;
         box-shadow: 5px 1px 7px #555;
@@ -50,7 +43,7 @@
             top: 50%;
             right: 4%;
             cursor: pointer;
-            background: no-repeat url(/assets/icons/arrow-next.svg);
+            background: no-repeat url(../assets/icons/arrow-next.svg);
         }
         &__prev{
             z-index: 1000;
@@ -61,7 +54,7 @@
             top: 50%;
             left: 4%;
             cursor: pointer;
-            background: no-repeat url(/assets/icons/arrow-prev.svg);
+            background: no-repeat url(../assets/icons/arrow-prev.svg);
         }
     }
    

@@ -141,7 +141,7 @@ class Lightbox {
     console.log(tableau); 
     const lightboxTitle = document.createElement("h2");
     lightboxTitle.classList.add("lightbox__title");
-    lightboxTitle.innerHTML = tableau.titres[indexI];
+    lightboxTitle.innerHTML = tableau.titres;
     container.appendChild(lightboxTitle);
   }
 
@@ -163,6 +163,7 @@ class Lightbox {
       i = -1;
     }
     this.loadImage(this.images[i + 1]);
+    this.loadTitle();
   }
 
   prevMedia(e) {
@@ -175,6 +176,7 @@ class Lightbox {
       i = this.images.length;
     }
     this.loadImage(this.images[i - 1]);
+    this.loadTitle();
   }
 
   builDOM(url) {
