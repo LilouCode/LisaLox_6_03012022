@@ -1,9 +1,17 @@
 #contact_modal {//importer keyframes depuis animation
-    display: none;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
     margin: 0;
-    top: 0;
+    padding: 0;
+    
+    display: none;
+    // position: absolute;
+    // width: 100%;
+    // margin: 0;
+    // top: 0;
+    
     bottom: -1500px;
     background-color: rgba(196, 196, 196, 0.4);
     -webkit-animation: slide-in-blurred-top 0.05s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
@@ -25,7 +33,6 @@
     justify-content: space-between;
     padding: 35px;
     margin: 4% auto;
-    -webkit-animation: slide-in-blurred-top 1.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     animation: slide-in-blurred-top 1.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
     &_header{
         justify-content: space-between;

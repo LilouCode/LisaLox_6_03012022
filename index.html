@@ -33,27 +33,27 @@
     <script src="./scripts/pages/index.js" defer></script>
   </head>
   <body>
-    <header role="banner">
+    <header>
       <a
         href="./index.html"
         class="goHomePage"
         role="button"
-        alt="Lien vers la page d'acceuil"
+        aria-label="Lien vers la page d'acceuil"
         id="logo"
-        tabindex="-1"
+        tabindex="0"
       >
         <img
           src="./assets/images/logo.png"
           class="logo"
           alt="Fisheye Home page"
-          tabindex="0"
+          aria-hidden="true"
         />
       </a>
       <h1 tabindex="0" aria-current="page">
         Nos photographes
       </h1>
     </header>
-    <main id="main" role="main">
+    <main id="main">
       <section class="photographer_section"></section>
     </main>
   </body>

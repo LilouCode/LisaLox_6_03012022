@@ -385,11 +385,13 @@ h1:focus-visible {
 }
 
 #contact_modal {
-  display: none;
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
-  top: 0;
+  padding: 0;
+  display: none;
   bottom: -1500px;
   background-color: rgba(196, 196, 196, 0.4);
   -webkit-animation: slide-in-blurred-top 0.05s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -413,7 +415,6 @@ h1:focus-visible {
   justify-content: space-between;
   padding: 35px;
   margin: 4% auto;
-  -webkit-animation: slide-in-blurred-top 1.25s cubic-bezier(0.23, 1, 0.32, 1) both;
   animation: slide-in-blurred-top 1.25s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 .modal_header {
