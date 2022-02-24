@@ -102,6 +102,7 @@ class Lightbox {
       const image = document.createElement("video");
       image.setAttribute("type", "video/mp4");
       image.classList.add("lightbox__video");
+      image.tabIndex= "1";
 
       container.appendChild(image);
       this.url = url;
@@ -114,6 +115,7 @@ class Lightbox {
     } else {
       const image = document.createElement("img");
       image.classList.add("lightbox__image");
+      image.tabIndex= "1";
 
       container.appendChild(image);
       this.url = url;
@@ -141,6 +143,7 @@ class Lightbox {
     console.log(tableau); 
     const lightboxTitle = document.createElement("h2");
     lightboxTitle.classList.add("lightbox__title");
+    lightboxTitle.tabIndex= "1";
     lightboxTitle.innerHTML = tableau.titres[indexI];
     container.appendChild(lightboxTitle);
   }
@@ -180,10 +183,10 @@ class Lightbox {
 
   builDOM(url) {
     const dom = document.getElementById("lightbox");
-    dom.innerHTML = ` <img alt="bouton fermer" class="lightbox__btn__close" src="assets/icons/close--red.svg" onclick="closeLightbox()" tabindex="0" aria-roledescription="fermer la lightbox" role="button"/>
-        <button alt="bouton suivant" aria-roledescription="aller à l'image suivante" class="lightbox__btn__next" tabindex="0" aria-roledescription="media suivant"></button>
-        <button alt="bouton précédent" aria-roledescription="aller à l'image précédente" class="lightbox__btn__prev" tabindex="0" aria-roledescription="media précédent"></button>
-        <div class="lightbox__container"></div>
+    dom.innerHTML = `<div class="lightbox__container"></div>
+        <button alt="bouton précédent" aria-roledescription="aller à l'image précédente" class="lightbox__btn__prev" tabindex="1" aria-roledescription="media précédent"></button>
+        <button alt="bouton suivant" aria-roledescription="aller à l'image suivante" class="lightbox__btn__next" tabindex="1" aria-roledescription="media suivant"></button>
+        <img alt="bouton fermer" class="lightbox__btn__close" src="assets/icons/close--red.svg" onclick="closeLightbox()" tabindex="1" aria-roledescription="fermer la lightbox" role="button"/>
         </div>
         `;
     dom
