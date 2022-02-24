@@ -12,9 +12,9 @@
         align-self: center
     }
     &__btn{
-        background: url(/assets/icons/dropdown-close.svg) no-repeat right;
+        background: url(../assets/icons/dropdown-close.svg) no-repeat right;
         &--open{
-            background: url(/assets/icons/dropdown-open.svg) no-repeat right;
+            background: url(../assets/icons/dropdown-open.svg) no-repeat right;
         }
     }
     &--remove{

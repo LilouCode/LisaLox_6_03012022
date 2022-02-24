@@ -130,10 +130,10 @@ body {
   align-self: center;
 }
 .dropdown__btn {
-  background: url(/assets/icons/dropdown-close.svg) no-repeat right;
+  background: url(../assets/icons/dropdown-close.svg) no-repeat right;
 }
 .dropdown__btn--open {
-  background: url(/assets/icons/dropdown-open.svg) no-repeat right;
+  background: url(../assets/icons/dropdown-open.svg) no-repeat right;
 }
 .dropdown--remove {
   display: none;
