@@ -385,10 +385,10 @@ h1:focus-visible {
 }
 
 #contact_modal {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 100vw;
-  height: 100vh;
+  height: 400vh;
   margin: 0;
   padding: 0;
   display: none;
