@@ -111,7 +111,6 @@ class Lightbox {
       image.autoplay = true;
       image.loop = true;
       image.controls = true;
-      image.alt = title;
     } else {
       const image = document.createElement("img");
       image.classList.add("lightbox__image");
@@ -120,7 +119,6 @@ class Lightbox {
       this.url = url;
 
       image.src = url;
-      // image.alt = title;
     }
 
   }
@@ -136,12 +134,7 @@ class Lightbox {
         console.log(tableau.images.indexOf(images))
       } 
     });
-    // function test(a){
-    // tableau.images.forEach(images => console.log(images))
-    // a = tableau.images.forEach(images => {if(images.includes(url)){console.log(tableau.images.indexOf(images))} })
-    // return indexI
-    // }
-    // test(indexI)
+
     console.log(indexI)
     console.table("une url avec index: "+tableau.images[2]);
     const container = this.element.querySelector(".lightbox__container");
@@ -175,7 +168,6 @@ class Lightbox {
 
   prevMedia(e) {
     e.preventDefault();
-    // this.images = this.tableau.images;
     let i = this.images.findIndex(
       (image) => image === this.url
     );
