@@ -1,5 +1,5 @@
 //Elements du DOM
-const lightbox = document.getElementById("lightbox"); //lightbox
+const lightbox = document.querySelector("#lightbox");
 const mediasGrid = document.getElementsByClassName(
   "grid_thumb_media"
 ); //images et videos gallerie
@@ -55,7 +55,9 @@ function init() {
   };
   console.log(tableau);
   console.log(titres);
-  const index= tableau.images.findIndex((image) => image === this.url);
+  const index = tableau.images.findIndex(
+    (image) => image === this.url
+  );
   links.forEach((link) =>
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -63,8 +65,44 @@ function init() {
         e.currentTarget.getAttribute("href"),
         images,
         tableau,
-        titres, index
+        titres,
+        index
       );
+      //focus
+      const focusableElements =
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      const firstFocusableElement =
+        lightbox.querySelectorAll(focusableElements)[0]; //premier element focusable
+      const focusableContent = lightbox.querySelectorAll(
+        focusableElements
+      );
+      const lastFocusableElement =
+        focusableContent[focusableContent.length - 1]; //dernier element focusable
+
+      document.addEventListener("keydown", function (e) {
+        let isTabPressed = e.key === "Tab";
+        if (!isTabPressed) {
+          return;
+        }
+
+        if (e.shiftKey) {
+          if (
+            document.activeElement === firstFocusableElement
+          ) {
+            lastFocusableElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          //if tab key est appuyé
+          if (
+            document.activeElement === lastFocusableElement
+          ) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+      });
+      firstFocusableElement.focus();
     })
   );
 }
@@ -74,27 +112,27 @@ function init() {
 /////////Init/////////
 
 class Lightbox {
-  
   constructor(url, images, tableau, titres) {
     this.element = this.builDOM(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.images = images;
     this.titres = titres;
     this.tableau = tableau;
-    this.imagesT = tableau.images
+    this.imagesT = tableau.images;
     this.titresT = tableau.titres;
     // this.titre= tableau.titres[tableau.images.findIndex((image) => image === this.url)];
     this.loadImage(url, tableau, images, titres);
-    this.loadTitle(url,tableau, titres, images);
+    this.loadTitle(url, tableau, titres, images);
     document.body.appendChild(this.element);
     document.addEventListener("keyup", this.onKeyUp);
   }
 
- 
   loadImage(url, tableau, images, titres, index) {
     this.url = null;
     // console.log(tableau.titres)
-    const container = this.element.querySelector(".lightbox__container");
+    const container = this.element.querySelector(
+      ".lightbox__container"
+    );
     container.innerHTML = "";
 
     if (url.includes(".mp4")) {
@@ -102,7 +140,7 @@ class Lightbox {
       const image = document.createElement("video");
       image.setAttribute("type", "video/mp4");
       image.classList.add("lightbox__video");
-      image.tabIndex= "1";
+      image.tabIndex = "1";
 
       container.appendChild(image);
       this.url = url;
@@ -115,35 +153,38 @@ class Lightbox {
     } else {
       const image = document.createElement("img");
       image.classList.add("lightbox__image");
-      image.tabIndex= "1";
+      image.tabIndex = "1";
 
       container.appendChild(image);
       this.url = url;
 
       image.src = url;
     }
-
   }
 
-  loadTitle(tableau, url){
+  loadTitle(tableau, url) {
     url = this.url;
     tableau = this.tableau;
-    console.log("Url de l'image en cours: "+url);
+    console.log("Url de l'image en cours: " + url);
     let indexI;
-    tableau.images.forEach(images => {
-      if(images.includes(url)){
+    tableau.images.forEach((images) => {
+      if (images.includes(url)) {
         indexI = tableau.images.indexOf(images);
-        console.log(tableau.images.indexOf(images))
-      } 
+        console.log(tableau.images.indexOf(images));
+      }
     });
 
-    console.log(indexI)
-    console.table("une url avec index: "+tableau.images[2]);
-    const container = this.element.querySelector(".lightbox__container");
-    console.log(tableau); 
+    console.log(indexI);
+    console.table(
+      "une url avec index: " + tableau.images[2]
+    );
+    const container = this.element.querySelector(
+      ".lightbox__container"
+    );
+    console.log(tableau);
     const lightboxTitle = document.createElement("h2");
     lightboxTitle.classList.add("lightbox__title");
-    lightboxTitle.tabIndex= "1";
+    lightboxTitle.tabIndex = "1";
     lightboxTitle.innerHTML = tableau.titres[indexI];
     container.appendChild(lightboxTitle);
   }
@@ -158,7 +199,7 @@ class Lightbox {
 
   nextMedia(e) {
     e.preventDefault();
-    console.log(this.tableau)
+    console.log(this.tableau);
     let i = this.images.findIndex(
       (image) => image === this.url
     );
