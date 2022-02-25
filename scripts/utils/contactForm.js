@@ -5,24 +5,60 @@ const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
-let firstNameError = document.getElementById("first-name_error");
-let lastNameError = document.getElementById("last-name_error");
+let firstNameError = document.getElementById(
+  "first-name_error"
+);
+let lastNameError = document.getElementById(
+  "last-name_error"
+);
 let emailError = document.getElementById("email_error");
 let messageError = document.getElementById("message_error");
 const form = document.getElementById("form");
-let messageValidation = document.getElementById("message_validation");
-const modal = document.getElementById("contact_modal");
+let messageValidation = document.getElementById(
+  "message_validation"
+);
+const modal = document.querySelector("#contact_modal");
 // const contactButton = document.getElementById("contactButton");
 const focusElements = document.querySelectorAll(".focus");
 ///////////////////////////launch and close modal///////////////////////////
 //lauch modal event
 
 function displayModal() {
-  // const modal = document.getElementById("contact_modal");
   modal.style.display = "flex";
-  // bodyW.classList.add('no-scroll');
-  modal.focus();
-  focusElements.tabIndex = -1;
+  //Focus
+  const focusableElements =
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const firstFocusableElement = modal.querySelectorAll(
+    focusableElements
+  )[0]; //premier element focusable
+  const focusableContent = modal.querySelectorAll(
+    focusableElements
+  );
+  const lastFocusableElement =
+    focusableContent[focusableContent.length - 1]; //dernier element focusable
+
+  document.addEventListener("keydown", function (e) {
+    let isTabPressed = e.key === "Tab";
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) {
+      if (
+        document.activeElement === firstFocusableElement
+      ) {
+        lastFocusableElement.focus();
+        e.preventDefault();
+      }
+    } else {
+      //if tab key est appuyé
+      if (document.activeElement === lastFocusableElement) {
+        firstFocusableElement.focus();
+        e.preventDefault();
+      }
+    }
+  });
+  firstFocusableElement.focus();
 }
 // document.getElementById('contactButton').addEventListener("click", displayModal());
 //close modal event
@@ -76,7 +112,7 @@ form.addEventListener("submit", (e) => {
       message: message.value,
     };
     console.table(envoi); //affiche le résultat dans la console sous forme de tableau
-    contactName.style.display="none";
+    contactName.style.display = "none";
     messageValidation.innerHTML = `Merci ${firstName.value} <br> <p>Votre message a bien été envoyé !</p>`;
     messageValidation.classList.add("validForm");
     messageValidation.setAttribute("aria-hidden", "false");
