@@ -139,7 +139,7 @@ const validFirstName = function (firstName) {
   ); // creation de la reg exp pour la validation du prénom
 
   // Conditions:
-  if (firstName.value.length < 2) {
+  if (firstName.value.replace(/\s/g,"").length < 2) {
     //Doit contenir au minimum 2 caractères
     msg =
       "Vous devez saisir un minimum de 2 caractères pour ce champs";
@@ -180,7 +180,7 @@ const validLastName = function (lastName) {
   ); // creation de la reg exp pour la validation du prénom
 
   //Conditions:
-  if (lastName.value.length < 2) {
+  if (lastName.value.replace(/\s/g,"").length < 2) {
     //Doit contenir au minimum 2 caractères
     msg =
       "Vous devez saisir un minimum de 2 caractères pour ce champs";
@@ -256,13 +256,12 @@ const validMessage = function (message) {
   let msg;
   let valid = false;
   message.setAttribute("aria-invalid", "true"); //accessibilite champ invalide
-
   //Conditions:
-  if (message.value.length < 10) {
+  if (message.value.replace(/\s/g,"").length < 10) {
     //Doit contenir au minimum 10 caractères
     msg =
       "Vous devez saisir un minimum de 10 caractères pour ce champs";
-  } else if (message.value.length > 1000) {
+  } else if (message.value.replace(/\s/g,"").length > 1000) {
     //Doit contenir au maximum 1000 caractères
     msg =
       "Votre message est trop long. Vous devez saisir un maximum de 1000 caractères pour ce champs";
