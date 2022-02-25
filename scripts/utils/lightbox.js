@@ -4,7 +4,6 @@ const mediasGrid = document.getElementsByClassName(
   "grid_thumb_media"
 ); //images et videos gallerie
 const mainWrapper = document.getElementById("main"); //main
-console.log(mediasGrid); //test
 
 /////////Display lightbox/////////
 function displayLightbox() {
@@ -34,7 +33,6 @@ window.addEventListener("keydown", function (event) {
 });
 
 function init() {
-  // avec lightbox.js :
   const links = Array.from(
     document.querySelectorAll(
       'a[href$=".jpg"], a[href$=".mp4"]'
@@ -68,6 +66,7 @@ function init() {
         titres,
         index
       );
+
       //focus
       const focusableElements =
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -120,16 +119,16 @@ class Lightbox {
     this.tableau = tableau;
     this.imagesT = tableau.images;
     this.titresT = tableau.titres;
-    // this.titre= tableau.titres[tableau.images.findIndex((image) => image === this.url)];
+
     this.loadImage(url, tableau, images, titres);
     this.loadTitle(url, tableau, titres, images);
     document.body.appendChild(this.element);
     document.addEventListener("keyup", this.onKeyUp);
   }
 
-  loadImage(url, tableau, images, titres, index) {
+  loadImage(url, tableau) {
     this.url = null;
-    // console.log(tableau.titres)
+
     const container = this.element.querySelector(
       ".lightbox__container"
     );
@@ -159,29 +158,32 @@ class Lightbox {
       this.url = url;
 
       image.src = url;
+      tableau = this.tableau;
+      
+      let indexI;
+      tableau.images.forEach((images) => {
+        if (images.includes(url)) {
+          indexI = tableau.images.indexOf(images);
+        }
+      });
+      image.alt = tableau.titres[indexI]
     }
   }
 
   loadTitle(tableau, url) {
     url = this.url;
     tableau = this.tableau;
-    console.log("Url de l'image en cours: " + url);
     let indexI;
     tableau.images.forEach((images) => {
       if (images.includes(url)) {
         indexI = tableau.images.indexOf(images);
-        console.log(tableau.images.indexOf(images));
       }
     });
 
-    console.log(indexI);
-    console.table(
-      "une url avec index: " + tableau.images[2]
-    );
     const container = this.element.querySelector(
       ".lightbox__container"
     );
-    console.log(tableau);
+
     const lightboxTitle = document.createElement("h2");
     lightboxTitle.classList.add("lightbox__title");
     lightboxTitle.tabIndex = "1";
